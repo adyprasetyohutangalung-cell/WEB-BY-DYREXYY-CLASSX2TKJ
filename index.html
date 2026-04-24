@@ -1,687 +1,258 @@
 <!DOCTYPE html>
 <html lang="id">
+
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
-  <title>Alight Motion Premium | Canva Kelas — dyrexyyyy</title>
-  <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hosting - FauziHost BY Fauzialifatah</title>
 
-    body {
-      background: #f5f7fc;
-      font-family: 'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, Helvetica, sans-serif;
-      color: #1a2c3e;
-      scroll-behavior: smooth;
-    }
+    <link rel="icon" href="https://files.catbox.moe/0g81e5.jpg" type="image/jpeg">
 
-    /* Timer di pojok kanan atas */
-    .expiry-timer {
-      position: fixed;
-      top: 20px;
-      right: 24px;
-      background: rgba(25, 35, 55, 0.85);
-      backdrop-filter: blur(12px);
-      border-radius: 60px;
-      padding: 8px 20px;
-      z-index: 1050;
-      font-weight: 500;
-      font-size: 0.85rem;
-      letter-spacing: 0.3px;
-      color: #f0f3fa;
-      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
-      border: 1px solid rgba(255, 255, 255, 0.2);
-      font-family: monospace;
-      transition: all 0.2s ease;
-      backdrop-filter: blur(10px);
-    }
-    .expiry-timer span {
-      font-weight: 700;
-      color: #ffd966;
-      margin-left: 6px;
-    }
-    .timer-label {
-      font-size: 0.7rem;
-      text-transform: uppercase;
-      letter-spacing: 1px;
-      margin-right: 8px;
-      opacity: 0.8;
-    }
+    <meta property="og:title" content="FauziHost - Penyedia Hosting Pterodactyl Terbaik">
+    <meta property="og:description"
+        content="Dapatkan hosting berkualitas premium dengan harga terjangkau dan performa optimal dari FauziHost. Solusi terbaik untuk server game dan aplikasi Anda.">
+    <meta property="og:image" content="https://files.catbox.moe/0g81e5.jpg">
+    <meta property="og:url" content="https://fauzialifatah.web.id/">
+    <meta property="og:type" content="website">
 
-    /* banner video with overlay elegant */
-    .hero-video {
-      position: relative;
-      width: 100%;
-      height: 460px;
-      overflow: hidden;
-      background: #0b1120;
-      box-shadow: 0 25px 40px -12px rgba(0, 0, 0, 0.25);
-    }
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
 
-    .hero-video video {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      opacity: 0.88;
-      transition: opacity 0.3s ease;
-    }
-
-    .hero-video::after {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background: linear-gradient(105deg, rgba(10, 20, 35, 0.4) 0%, rgba(0, 0, 0, 0.2) 100%);
-      pointer-events: none;
-    }
-
-    /* container */
-    .container {
-      max-width: 1280px;
-      margin: 0 auto;
-      padding: 2rem 2rem 3rem;
-    }
-
-    /* header text */
-    .brand {
-      text-align: center;
-      margin-bottom: 2rem;
-    }
-
-    .brand h1 {
-      font-size: 2.6rem;
-      font-weight: 600;
-      letter-spacing: -0.02em;
-      background: linear-gradient(135deg, #1f2f4a, #2c3e66);
-      background-clip: text;
-      -webkit-background-clip: text;
-      color: transparent;
-      margin-bottom: 0.5rem;
-    }
-
-    .brand .byline {
-      font-size: 0.9rem;
-      color: #5c6f87;
-      border-bottom: 1px solid #e0e7f0;
-      display: inline-block;
-      padding-bottom: 0.4rem;
-      font-weight: 450;
-    }
-
-    /* cards grid */
-    .premium-grid {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 2rem;
-      margin: 2.5rem 0 2rem;
-    }
-
-    .card {
-      flex: 1;
-      min-width: 280px;
-      background: #ffffff;
-      border-radius: 2rem;
-      box-shadow: 0 20px 35px -12px rgba(0, 0, 0, 0.08), 0 1px 2px rgba(0, 0, 0, 0.02);
-      transition: all 0.3s cubic-bezier(0.2, 0, 0, 1);
-      backdrop-filter: blur(0px);
-      border: 1px solid rgba(203, 213, 225, 0.4);
-      overflow: hidden;
-    }
-
-    .card:hover {
-      transform: translateY(-6px);
-      box-shadow: 0 30px 45px -15px rgba(0, 0, 0, 0.15);
-      border-color: #cbd5e180;
-    }
-
-    .card-header {
-      padding: 1.5rem 1.8rem 0.8rem;
-      border-bottom: 2px solid #f0f2f8;
-    }
-
-    .card-header h2 {
-      font-size: 1.75rem;
-      font-weight: 600;
-      display: flex;
-      align-items: center;
-      gap: 0.6rem;
-      color: #1e2f41;
-    }
-
-    .card-header h2 span {
-      background: #eef2ff;
-      padding: 0.2rem 0.6rem;
-      font-size: 0.8rem;
-      border-radius: 100px;
-      font-weight: 500;
-      color: #2c4c7c;
-    }
-
-    .card-body {
-      padding: 1.5rem 1.8rem;
-    }
-
-    .badge-duration {
-      background: #eef6f0;
-      color: #2b6e3c;
-      padding: 0.5rem 1rem;
-      border-radius: 60px;
-      display: inline-block;
-      font-size: 0.8rem;
-      font-weight: 500;
-      margin-bottom: 1.2rem;
-      backdrop-filter: blur(2px);
-    }
-
-    .description {
-      color: #3e5a6f;
-      font-size: 0.9rem;
-      line-height: 1.45;
-      margin: 1rem 0 1.5rem;
-    }
-
-    .claim-btn {
-      width: 100%;
-      background: #1f2f46;
-      border: none;
-      padding: 14px 0;
-      font-weight: 600;
-      font-size: 1rem;
-      border-radius: 50px;
-      color: white;
-      cursor: pointer;
-      transition: all 0.2s ease;
-      font-family: inherit;
-      letter-spacing: 0.3px;
-      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      gap: 8px;
-    }
-
-    .claim-btn.canva-btn {
-      background: #1c4e6e;
-    }
-
-    .claim-btn:hover {
-      background: #14212e;
-      transform: scale(0.98);
-      box-shadow: 0 6px 14px rgba(0, 0, 0, 0.08);
-    }
-
-    .claim-btn.canva-btn:hover {
-      background: #0f3e58;
-    }
-
-    .footer-note {
-      text-align: center;
-      font-size: 0.75rem;
-      color: #7c8ca0;
-      margin-top: 3rem;
-      padding-top: 1rem;
-      border-top: 1px solid #e2e8f0;
-    }
-
-    /* MODAL STYLE - minimal mewah */
-    .modal {
-      display: none;
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background: rgba(25, 35, 50, 0.8);
-      backdrop-filter: blur(8px);
-      justify-content: center;
-      align-items: center;
-      z-index: 1100;
-      font-family: 'Inter', sans-serif;
-    }
-
-    .modal-card {
-      background: #ffffff;
-      max-width: 520px;
-      width: 90%;
-      border-radius: 2rem;
-      padding: 1.8rem 1.8rem 2rem;
-      box-shadow: 0 40px 70px rgba(0, 0, 0, 0.2);
-      transition: all 0.2s;
-      border: 1px solid rgba(255, 255, 255, 0.2);
-    }
-
-    .modal-card h3 {
-      font-size: 1.6rem;
-      font-weight: 600;
-      margin-bottom: 0.25rem;
-      color: #1c2f44;
-    }
-
-    .modal-card .modal-sub {
-      font-size: 0.8rem;
-      color: #5e748b;
-      margin-bottom: 1.4rem;
-      border-left: 3px solid #cbdae9;
-      padding-left: 0.7rem;
-    }
-
-    .modal-card input {
-      width: 100%;
-      padding: 0.9rem 1rem;
-      font-size: 1rem;
-      border: 1.5px solid #e2edf7;
-      border-radius: 60px;
-      background: #fefefe;
-      transition: 0.2s;
-      font-family: monospace;
-      letter-spacing: 0.5px;
-    }
-
-    .modal-card input:focus {
-      outline: none;
-      border-color: #5a7ea8;
-      box-shadow: 0 0 0 3px rgba(90, 126, 168, 0.2);
-    }
-
-    .modal-actions {
-      display: flex;
-      gap: 12px;
-      margin: 20px 0 16px;
-    }
-
-    .modal-actions button {
-      flex: 1;
-      background: #1f2f46;
-      border: none;
-      padding: 12px;
-      border-radius: 60px;
-      color: white;
-      font-weight: 600;
-      cursor: pointer;
-      transition: all 0.2s;
-    }
-
-    .modal-actions button:last-child {
-      background: #eef2f9;
-      color: #2a405b;
-    }
-
-    .modal-result {
-      background: #f8fafd;
-      border-radius: 1.2rem;
-      padding: 1rem;
-      margin-top: 1rem;
-      font-size: 0.85rem;
-      border-left: 4px solid #8aaccf;
-      word-break: break-word;
-    }
-
-    .account-preview {
-      background: #f0f4fa;
-      border-radius: 1rem;
-      padding: 0.75rem;
-      margin: 0.5rem 0;
-      font-size: 0.8rem;
-    }
-
-    a {
-      color: #2f6796;
-      text-decoration: none;
-      font-weight: 500;
-    }
-
-    a:hover {
-      text-decoration: underline;
-    }
-
-    /* responsive */
-    @media (max-width: 780px) {
-      .container {
-        padding: 1rem 1.2rem 2rem;
-      }
-      .brand h1 {
-        font-size: 1.8rem;
-      }
-      .hero-video {
-        height: 260px;
-      }
-      .expiry-timer {
-        top: 12px;
-        right: 12px;
-        padding: 5px 14px;
-        font-size: 0.7rem;
-      }
-    }
-  </style>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="css/style.css">
 </head>
+
 <body>
-
-<!-- TIMER REAL TIME 1 MINGGU (Penghapusan Web) pojok kanan atas -->
-<div class="expiry-timer" id="expiryTimer">
-  <span class="timer-label">⏳ WEB BERLAKU</span>
-  <span id="countdownDisplay">-- : -- : -- : --</span>
-</div>
-
-<div class="hero-video">
-  <video id="bannerVideo" controls autoplay muted loop playsinline>
-    <source src="https://files.catbox.moe/zrgau5.mp4" type="video/mp4">
-    Browser tidak support video banner.
-  </video>
-</div>
-
-<div class="container">
-  <div class="brand">
-    <h1>alight motion premium <span style="font-weight:400">+</span> canva kelas</h1>
-    <div class="byline">by dyrexyyyy · akses eksklusif terbatas</div>
-  </div>
-
-  <div class="premium-grid">
-    <!-- ALIGHT MOTION CARD -->
-    <div class="card">
-      <div class="card-header">
-        <h2>🎬 Alight Motion <span>Premium</span></h2>
-      </div>
-      <div class="card-body">
-        <div class="badge-duration">✨ durasi aktif 1 tahun penuh</div>
-        <div class="description">
-          5 akun premium siap pakai. Masukkan kode spesial, Anda akan mendapat <strong>salah satu akun secara acak</strong> (masing-masing akun sudah termasuk video tutorial akses & password via generator).
+    <div id="notificationModal" class="modal">
+        <div class="modal-content">
+            <span class="close-button">&times;</span>
+            <h2>Tata Cara Beli Hosting</h2>
+            <ol>
+                <li>Isi "Informasi Akun" Anda dengan nama pengguna, surel, dan kata sandi yang valid.</li>
+                <li>Pilih "Paket Hosting" yang Anda inginkan dari daftar yang tersedia.</li>
+                <li>Pilih "Metode Pembayaran" yang sesuai (QRIS, Gopay, atau DANA).</li>
+                <li>Periksa "Ringkasan Pesanan" Anda untuk memastikan semua detail sudah benar, termasuk harga paket,
+                    pajak, dan total pembayaran.</li>
+                <li>Klik tombol "BELI" untuk mengirim pesanan Anda melalui WhatsApp.</li>
+                <li>Lanjutkan percakapan di WhatsApp dengan Admin FauziHost untuk konfirmasi pembayaran dan aktivasi
+                    layanan Anda.</li>
+            </ol>
+            <button id="understoodButton" class="submit-btn" style="width: auto; margin-top: 20px;">Saya
+                Mengerti</button>
         </div>
-        <button id="amClaimBtn" class="claim-btn">🔑 Claim Alight Motion Premium →</button>
-      </div>
     </div>
 
-    <!-- CANVA CARD -->
-    <div class="card">
-      <div class="card-header">
-        <h2>📘 Canva <span>untuk satu kelas</span></h2>
-      </div>
-      <div class="card-body">
-        <div class="badge-duration">🎓 invite kelas premium</div>
-        <div class="description">
-          Dapatkan link undangan Canva untuk kelas / grup. Tersedia 30 kode unik, <strong>setiap kode valid dan menghasilkan link yang sama</strong>. Setiap kode hanya bisa dipakai sekali.
+    <div id="loading-page">
+        <div class="loader-content">
+            <div class="logo-container-loading">
+                <i class="fas fa-server logo-icon"></i>
+                <span class="logo-text">FauziHost</span>
+            </div>
+            <div class="progress-bar-container">
+                <div class="progress-bar-fill" id="progressBarFill"></div>
+            </div>
+            <p id="loadingMessage">Memuat sumber daya...</p>
         </div>
-        <button id="canvaClaimBtn" class="claim-btn canva-btn">🎨 Klaim Link Canva Kelas →</button>
-      </div>
     </div>
-  </div>
-  <div class="footer-note">
-    ⚡ Setiap kode hanya dapat digunakan satu kali. Gunakan dengan bijak. <br> 
-    © dyrexyyyy · Alight Motion (5 akun 1thn) & Canva for Class (invite link)
-  </div>
-</div>
 
-<!-- MODAL STRUCTURE -->
-<div id="premiumModal" class="modal">
-  <div class="modal-card">
-    <h3 id="modalMainTitle">🔐 Masukkan Kode Akses</h3>
-    <div id="modalSubInfo" class="modal-sub">Kode case-insensitive, pastikan benar</div>
-    <input type="text" id="modalCodeInput" placeholder="Kode: contoh AM-PRM-1Y4R" autocomplete="off">
-    <div class="modal-actions">
-      <button id="modalSubmitBtn">Verifikasi & Klaim</button>
-      <button id="modalCloseBtn">Tutup</button>
+    <nav class="navbar">
+        <div class="logo-container">
+            <i class="fas fa-server logo-icon"></i>
+            <span class="logo-text">FauziHost</span>
+        </div>
+        <div class="login-icon-container">
+            <a href="/peges/login_admin" class="login-icon" title="Masuk Admin">
+                <i class="fas fa-user-circle"></i>
+            </a>
+        </div>
+        <div class="nav-links">
+        </div>
+    </nav>
+
+    <div class="main-container">
+        <div class="registration-container">
+            <div class="form-header">
+                <h2>Welcome To Website</h2>
+                <p>Hosting - FauziHost BY Fauzialifatah</p>
+            </div>
+
+            <form id="hostingForm">
+                <div class="form-section">
+                    <h3><i class="fas fa-user-circle"></i> Informasi Akun</h3>
+                    <div class="form-group">
+                        <label for="username" class="form-label">Nama Pengguna</label>
+                        <div class="input-group">
+                            <input type="text" id="username" class="form-input" placeholder="Masukkan nama pengguna"
+                                required>
+                            <span class="input-group-addon">fauzihost.biz.id</span>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="email" class="form-label">Alamat Surel</label>
+                        <input type="email" id="email" class="form-input" placeholder="fauzialifatah@gmail.com"
+                            required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="password" class="form-label">Kata Sandi</label>
+                        <input type="password" id="password" class="form-input" placeholder="Masukkan kata sandi"
+                            required>
+                        <p class="password-hint" id="passwordHint">Kata sandi minimal 8 karakter</p>
+                    </div>
+                </div>
+
+                <div class="form-section">
+                    <h3><i class="fas fa-server"></i> Pilih Paket Hosting</h3>
+                    <div class="product-selection">
+                        <div class="product-accordion" id="productAccordion">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-section">
+                    <h3><i class="fas fa-credit-card"></i> Metode Pembayaran</h3>
+                    <div class="payment-methods">
+                        <div class="payment-method qris" data-method="qris">
+                            <i class="fas fa-qrcode"></i> <span>QRIS</span>
+                        </div>
+                        <div class="payment-method gopay" data-method="gopay">
+                            <i class="fas fa-wallet"></i> <span>Gopay</span>
+                        </div>
+                        <div class="payment-method dana" data-method="dana">
+                            <i class="fas fa-dollar-sign"></i>
+                            <span>DANA</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-section">
+                    <h3><i class="fas fa-comments"></i> Pilih via chat ( whatsapp off )</h3>
+                    <div class="form-group">
+                        <div class="checkbox-item">
+                            <input type="radio" id="chatWhatsapp" name="chatPlatform" value="whatsapp" checked required>
+                            <label for="chatWhatsapp">WhatsApp</label>
+                        </div>
+                        <div class="checkbox-item">
+                            <input type="radio" id="chatTelegram" name="chatPlatform" value="telegram" required>
+                            <label for="chatTelegram">Telegram</label>
+                        </div>
+                    </div>
+                </div>
+                <div class="summary-box">
+                    <div class="summary-title">Ringkasan Pesanan</div>
+                    <div class="summary-item">
+                        <span class="summary-label">Paket Hosting:</span>
+                        <span class="summary-value" id="summary-package">-</span>
+                    </div>
+                    <div class="summary-item">
+                        <span class="summary-label">Harga:</span>
+                        <span class="summary-value" id="summary-price">Rp 0</span>
+                    </div>
+                    <div class="summary-item">
+                        <span class="summary-label">Pajak:</span>
+                        <span class="summary-value" id="summary-tax">Rp 0</span>
+                    </div>
+                    <div class="summary-item">
+                        <span class="summary-label">Metode Pembayaran:</span>
+                        <span class="summary-value" id="summary-payment">-</span>
+                    </div>
+                    <div class="summary-item">
+                        <span class="summary-label">Total:</span>
+                        <span class="summary-value summary-total" id="summary-total">Rp 0</span>
+                    </div>
+                </div>
+
+                <button type="submit" class="submit-btn" id="submitButton">
+                    <i class="fas fa-paper-plane"></i> Beli Hosting
+                </button>
+            </form>
+
+            <div class="form-section">
+                <h3><i class="fas fa-question-circle"></i> Pertanyaan Umum (FAQ)</h3>
+                <div class="accordion-faq-container" id="faqAccordionContainer">
+                </div>
+            </div>
+        </div>
+        <div class="separate-feature-section">
+            <h2 class="section-title"><i class="fas fa-star"></i> Kenapa Pilih FauziHost?</h2>
+            <div class="feature-cards-container" id="whyChooseUsContainer">
+            </div>
+        </div>
     </div>
-    <div id="modalResultArea" class="modal-result"></div>
-  </div>
-</div>
 
-<script>
-  // ======================== 1. TIMER REAL TIME 1 MINGGU ========================
-  function startExpiryCountdown() {
-    const ONE_WEEK_MS = 7 * 24 * 60 * 60 * 1000;
-    // set waktu target = sekarang + 1 minggu
-    let targetTime = localStorage.getItem('webExpiryTarget');
-    if (!targetTime) {
-      targetTime = Date.now() + ONE_WEEK_MS;
-      localStorage.setItem('webExpiryTarget', targetTime);
-    } else {
-      targetTime = parseInt(targetTime);
-      // Jika ternyata waktu sudah lewat, bisa reset (optional)
-      if (targetTime < Date.now()) {
-        // jika sudah lewat, tampilkan 00:00:00 dan bisa redirect / halaman kadaluarsa
-        targetTime = Date.now() + ONE_WEEK_MS;
-        localStorage.setItem('webExpiryTarget', targetTime);
-      }
-    }
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-left">
+                <div class="logo-container">
+                    <i class="fas fa-server logo-icon"></i>
+                    <span class="logo-text">FauziHost</span>
+                </div>
+                <p>Penyedia panel Pterodactyl terbaik dengan harga terjangkau dan kualitas premium, didukung oleh
+                    performa optimal, uptime tinggi, dan layanan support responsif kami hadir untuk memenuhi kebutuhan
+                    hosting Anda, Dikelola secara profesional oleh Fauzialifatah, demi memberikan pengalaman terbaik
+                    bagi setiap pengguna.</p>
+                <div class="social-icons">
+                    <a href="https://whatsapp.com/channel/0029VawsCnQ9mrGkOuburC1z" target="_blank" title="WhatsApp"><i
+                            class="fab fa-whatsapp"></i></a>
+                    <a href="https://www.instagram.com/fauzialifatah_" target="_blank" title="Instagram"><i
+                            class="fab fa-instagram"></i></a>
+                    <a href="#" target="_blank" title="TikTok"><i class="fab fa-tiktok"></i></a>
+                </div>
+            </div>
+            <div class="footer-middle">
+                <div class="footer-column">
+                    <h3>Layanan</h3>
+                    <ul>
+                        <li><a href="https://whatsapp.com/channel/0029VawsCnQ9mrGkOuburC1z">Panel Pterodactyl</a></li>
+                        <li><a href="https://whatsapp.com/channel/0029VawsCnQ9mrGkOuburC1z">Web Hosting</a></li>
+                        <li><a href="https://whatsapp.com/channel/0029VawsCnQ9mrGkOuburC1z">VPS Hosting</a></li>
+                        <li><a href="https://whatsapp.com/channel/0029VawsCnQ9mrGkOuburC1z">Domain</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>Perusahaan</h3>
+                    <ul>
+                        <li><a href="https://whatsapp.com/channel/0029VawsCnQ9mrGkOuburC1z">Tentang Kami</a></li>
+                        <li><a href="https://whatsapp.com/channel/0029VawsCnQ9mrGkOuburC1z">Kontak</a></li>
+                        <li><a href="https://whatsapp.com/channel/0029VawsCnQ9mrGkOuburC1z">Blog</a></li>
+                        <li><a href="https://whatsapp.com/channel/0029VawsCnQ9mrGkOuburC1z">Karier</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>Bantuan</h3>
+                    <ul>
+                        <li><a href="#">FAQ</a></li>
+                        <li><a href="#">Dokumentasi</a></li>
+                        <li><a href="#">Komunitas</a></li>
+                        <li><a href="#">Status Server</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>© 2025 FauziHost - Fauzialifatah.</p>
+            <div class="bottom-links">
+                <a href="#">Syarat & Ketentuan</a>
+                <a href="#">Kebijakan Privasi</a>
+            </div>
+        </div>
+    </footer>
 
-    const timerElement = document.getElementById('countdownDisplay');
-    
-    function updateTimer() {
-      const now = Date.now();
-      const distance = targetTime - now;
-      
-      if (distance <= 0) {
-        timerElement.innerHTML = "00 : 00 : 00 : 00";
-        // Opsional: tampilkan pesan bahwa web telah dihapus / kedaluwarsa
-        document.body.style.opacity = '0.5';
-        const overlayExpired = document.createElement('div');
-        overlayExpired.style.position = 'fixed';
-        overlayExpired.style.top = '0';
-        overlayExpired.style.left = '0';
-        overlayExpired.style.width = '100%';
-        overlayExpired.style.height = '100%';
-        overlayExpired.style.backgroundColor = 'rgba(0,0,0,0.85)';
-        overlayExpired.style.backdropFilter = 'blur(12px)';
-        overlayExpired.style.zIndex = '9999';
-        overlayExpired.style.display = 'flex';
-        overlayExpired.style.justifyContent = 'center';
-        overlayExpired.style.alignItems = 'center';
-        overlayExpired.style.flexDirection = 'column';
-        overlayExpired.innerHTML = `<div style="background:#1f1f2e; padding:2rem; border-radius:2rem; text-align:center; color:white;"><h2>⏰ Web Telah Kedaluwarsa</h2><p>Masa aktif 1 minggu sudah berakhir. Web ini dihapus sesuai ketentuan.</p><button onclick="location.reload()" style="margin-top:1rem; padding:0.6rem 1.8rem; border-radius:40px; background:#ffb347; border:none;">↻ Cek Kembali</button></div>`;
-        document.body.appendChild(overlayExpired);
-        clearInterval(interval);
-        return;
-      }
-      
-      const days = Math.floor(distance / (1000 * 60 * 60 * 24));
-      const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-      const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-      const seconds = Math.floor((distance % (1000 * 60)) / 1000);
-      
-      timerElement.innerHTML = `${days}d : ${hours.toString().padStart(2,'0')} : ${minutes.toString().padStart(2,'0')} : ${seconds.toString().padStart(2,'0')}`;
-    }
-    
-    updateTimer();
-    const interval = setInterval(updateTimer, 1000);
-  }
-  
-  startExpiryCountdown();
-  
-  // --------------------------------------------------------------
-  // DATA AKUN ALIGHT MOTION (5 AKUN SESUAI PERMINTAAN)
-  // --------------------------------------------------------------
-  const alightAccounts = [
-    {
-      email: "blackc4s36357@easyhomefit.com",
-      passLink: "https://generator.email/blackc4s36357@easyhomefit.com",
-      videoTutorial: "https://files.catbox.moe/7lmiz7.mp4",
-      extraNote: "Klik link password lalu buka email temporer."
-    },
-    {
-      email: "evelisov@hotmeil.net",
-      passLink: "https://generator.email/evelisov@hotmeil.net",
-      videoTutorial: "https://files.catbox.moe/7lmiz7.mp4",
-      extraNote: "Gunakan generator untuk melihat password."
-    },
-    {
-      email: "fl6ub6z4kd5o@parkeer.site",
-      passLink: "http://generator.email/fl6ub6z4kd5o@parkeer.site",
-      videoTutorial: "https://files.catbox.moe/7lmiz7",
-      extraNote: "Buka link untuk akses password."
-    },
-    {
-      email: "canonnie2@hesoyam.cloud",
-      passLink: "http://generator.email/canonnie2@hesoyam.cloud",
-      videoTutorial: "https://files.catbox.moe/7lmiz7",
-      extraNote: "Password didapat dari link generator."
-    },
-    {
-      email: "Nataluzanina@izhowto.com",
-      passLink: "http://generator.email/Nataluzanina@izhowto.com",
-      videoTutorial: "https://files.catbox.moe/7lmiz7",
-      extraNote: "Akses akun premium 1 tahun."
-    }
-  ];
-
-  // 5 KODE UNTUK ALIGHT MOTION (acak / sesuai permintaan) 
-  // SEMUA KODE VALID (dipublikasikan)
-  const amMasterCodes = [
-    "AM-PRM-1Y4R", "ALIGHT-X2025", "MOTION-99FREE", "DYREX-PREMIUM", "ALIGHT-1THN"
-  ];
-  let amUsed = new Array(5).fill(false);
-
-  // --------------------------------------------------------------
-  // 30 KODE CANVA YANG SEMUA VALID & AKAN BERFUNGSI (sesuai permintaan : 30 kode acak tapi benar semua)
-  // --------------------------------------------------------------
-  const canvaValidCodes = [
-    "CANVA-9H3JK2", "CANVA-5M8Q7R", "CANVA-2L4N6P", "CANVA-7X9V3C", "CANVA-8B1F4G",
-    "CANVA-6D2S5A", "CANVA-3E7W9Z", "CANVA-0U8I4O", "CANVA-4R6T1Y", "CANVA-1Q2W3E",
-    "CANVA-K9L0M1", "CANVA-P2O4I6", "CANVA-Z8X7C5", "CANVA-V3B6N9", "CANVA-G7H2J5",
-    "CANVA-T8R4E2", "CANVA-Y9U1I7", "CANVA-F5D6S3", "CANVA-W4Q7A1", "CANVA-J2K8L4",
-    "CANVA-C9X3V6", "CANVA-N7M4B2", "CANVA-L5P0O9", "CANVA-S6D3F8", "CANVA-E1R2T4",
-    "CANVA-A9H7J3", "CANVA-Z3L5K8", "CANVA-X2C4V6", "CANVA-U7I9O0", "CANVA-Q1W2E5"
-  ];
-  let canvaUsed = new Array(canvaValidCodes.length).fill(false);
-  
-  const canvaInviteLink = "https://www.canva.com/brand/join?token=chpAbHs9r-T3FTIvHDIfVA&referrer=team-invite";
-
-  // ambil elemen modal
-  const modal = document.getElementById('premiumModal');
-  const modalTitle = document.getElementById('modalMainTitle');
-  const modalSub = document.getElementById('modalSubInfo');
-  const modalInput = document.getElementById('modalCodeInput');
-  const modalSubmit = document.getElementById('modalSubmitBtn');
-  const modalClose = document.getElementById('modalCloseBtn');
-  const modalResult = document.getElementById('modalResultArea');
-
-  let activeType = null;
-
-  function getRandomAlightAccount() {
-    const randIdx = Math.floor(Math.random() * alightAccounts.length);
-    return alightAccounts[randIdx];
-  }
-
-  function processAMClaim(inputCode) {
-    const codeTrim = inputCode.trim().toUpperCase();
-    const foundIndex = amMasterCodes.findIndex((code, idx) => code.toUpperCase() === codeTrim && !amUsed[idx]);
-    if (foundIndex === -1) {
-      const usedIndex = amMasterCodes.findIndex((code, idx) => code.toUpperCase() === codeTrim && amUsed[idx]);
-      if (usedIndex !== -1) return { success: false, message: "⛔ Kode sudah pernah digunakan! Setiap kode hanya untuk satu kali klaim." };
-      return { success: false, message: "❌ Kode Alight Motion tidak valid. Tersedia 5 kode: AM-PRM-1Y4R, ALIGHT-X2025, MOTION-99FREE, DYREX-PREMIUM, ALIGHT-1THN." };
-    }
-    amUsed[foundIndex] = true;
-    const selectedAcc = getRandomAlightAccount();
-    const resultHtml = `
-      <div style="font-weight:600; margin-bottom:8px;">🎉 Selamat! Akun Premium 1 Tahun 🎉</div>
-      <div class="account-preview">
-        📧 <strong>Email:</strong> ${selectedAcc.email}<br>
-        🔑 <strong>Password (via generator):</strong> <a href="${selectedAcc.passLink}" target="_blank">${selectedAcc.passLink}</a><br>
-        🎥 <strong>Cara akses akun:</strong> <a href="${selectedAcc.videoTutorial}" target="_blank">Tutorial Video</a><br>
-        ⏳ Durasi: <strong>1 Tahun Aktif</strong><br>
-        💡 ${selectedAcc.extraNote}
-      </div>
-      <div style="margin-top:8px; font-size:12px;">✧ simpan data dengan aman ✧</div>
-    `;
-    return { success: true, message: resultHtml };
-  }
-
-  // proses CANVA : semua 30 kode valid (fix)
-  function processCanvaClaim(inputCode) {
-    const codeTrim = inputCode.trim().toUpperCase();
-    const foundIdx = canvaValidCodes.findIndex((code, idx) => code.toUpperCase() === codeTrim && !canvaUsed[idx]);
-    if (foundIdx === -1) {
-      const usedIdx = canvaValidCodes.findIndex((code, idx) => code.toUpperCase() === codeTrim && canvaUsed[idx]);
-      if (usedIdx !== -1) return { success: false, message: "⚠️ Kode Canva sudah pernah digunakan. Setiap kode hanya sekali pakai." };
-      return { success: false, message: "❌ Kode Canva tidak dikenali. Pastikan anda menggunakan 30 kode undian Canva yang tersedia (contoh: CANVA-9H3JK2)" };
-    }
-    canvaUsed[foundIdx] = true;
-    const resultHtml = `
-      <div style="font-weight:600; margin-bottom:10px;">✨ Link Canva untuk satu kelas berhasil didapatkan ✨</div>
-      <div class="account-preview" style="background:#eaf4ff;">
-        📌 <strong>Link Invite Kelas / Grup :</strong><br>
-        <a href="${canvaInviteLink}" target="_blank" style="word-break:break-all;">${canvaInviteLink}</a><br><br>
-        🧑‍🏫 Gunakan link ini untuk bergabung ke kelas Canva premium. <br>
-        ⚡ <strong>Limit:</strong> Kode sudah terpakai, akses langsung via link.
-      </div>
-      <div style="margin-top:6px; font-size:12px;">✅ Selamat mendesain bersama Canva Edu Class!</div>
-    `;
-    return { success: true, message: resultHtml };
-  }
-
-  function handleSubmit() {
-    const rawCode = modalInput.value;
-    if (!rawCode.trim()) {
-      modalResult.innerHTML = '<span style="color:#b1624b;">✏️ Silakan masukkan kode terlebih dahulu.</span>';
-      return;
-    }
-
-    if (activeType === 'am') {
-      const result = processAMClaim(rawCode);
-      if (result.success) {
-        modalResult.innerHTML = result.message;
-        modalInput.value = '';
-      } else {
-        modalResult.innerHTML = `<span style="color:#c25131;">${result.message}</span>`;
-      }
-    } 
-    else if (activeType === 'canva') {
-      const result = processCanvaClaim(rawCode);
-      if (result.success) {
-        modalResult.innerHTML = result.message;
-        modalInput.value = '';
-      } else {
-        modalResult.innerHTML = `<span style="color:#c25131;">${result.message}</span>`;
-      }
-    } else {
-      modalResult.innerHTML = '<span style="color:red;">Terjadi kesalahan, coba ulangi.</span>';
-    }
-  }
-
-  function openModal(type) {
-    activeType = type;
-    modalInput.value = '';
-    modalResult.innerHTML = '';
-    if (type === 'am') {
-      modalTitle.innerText = '✨ Alight Motion Premium ✨';
-      modalSub.innerText = 'Masukkan kode spesial untuk claim akun 1 tahun (5 kode tersedia)';
-    } else {
-      modalTitle.innerText = '🎓 Canva untuk Satu Kelas';
-      modalSub.innerText = 'Masukkan kode undian : tersedia 30 kode valid (semua berfungsi)';
-    }
-    modal.style.display = 'flex';
-    modalInput.focus();
-  }
-
-  function closeModalFn() {
-    modal.style.display = 'none';
-    activeType = null;
-    modalResult.innerHTML = '';
-  }
-
-  document.getElementById('amClaimBtn').addEventListener('click', () => openModal('am'));
-  document.getElementById('canvaClaimBtn').addEventListener('click', () => openModal('canva'));
-  modalSubmit.addEventListener('click', handleSubmit);
-  modalClose.addEventListener('click', closeModalFn);
-  window.addEventListener('click', (e) => {
-    if (e.target === modal) closeModalFn();
-  });
-  modalInput.addEventListener('keypress', (e) => {
-    if (e.key === 'Enter') {
-      e.preventDefault();
-      handleSubmit();
-    }
-  });
-
-  // console friendly: tampilkan semua kode AM & Canva 
-  console.log("🎁 DAFTAR 5 KODE ALIGHT MOTION (case-insensitive) :");
-  amMasterCodes.forEach((c, i) => console.log(`   ${i+1}. ${c}`));
-  console.log("📚 DAFTAR 30 KODE CANVA VALID (semua kode bisa claim link) :");
-  canvaValidCodes.forEach((c, i) => console.log(`   ${i+1}. ${c}`));
-  console.log("✅ Total Canva codes = 30, semuanya berfungsi dengan benar. Timer countdown 1 minggu aktif.");
-</script>
+    <div class="floating-theme-switcher" id="floatingThemeSwitcher">
+        <button class="toggle-button" id="toggleThemeButton" title="Ganti Tema">
+            <i class="fas fa-palette"></i>
+        </button>
+        <div class="theme-options" id="themeOptions">
+            <button id="themeGreen" class="theme-button green-theme" title="Tema Hijau"></button>
+            <button id="themeRed" class="theme-button red-theme" title="Tema Merah"></button>
+            <button id="themeBlue" class="theme-button blue-theme" title="Tema Biru"></button>
+        </div>
+    </div>
+    <script src="app/config.js"></script>
+    <script src="app/peges.js"></script>
 </body>
+
 </html>
