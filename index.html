@@ -396,6 +396,102 @@
       animation: fadeInScale 0.3s ease;
     }
 
+    /* Iklan Expired - khusus untuk masa habis */
+    .expired-modal {
+      display: flex;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.85);
+      backdrop-filter: blur(12px);
+      justify-content: center;
+      align-items: center;
+      z-index: 9999;
+      font-family: 'Inter', sans-serif;
+    }
+
+    .expired-card {
+      background: #ffffff;
+      max-width: 520px;
+      width: 90%;
+      border-radius: 2rem;
+      overflow: hidden;
+      box-shadow: 0 30px 60px rgba(0, 0, 0, 0.4);
+      border: 1px solid rgba(0, 0, 0, 0.1);
+      animation: fadeInScale 0.3s ease;
+    }
+
+    .expired-image {
+      width: 100%;
+      display: block;
+    }
+
+    .expired-content {
+      padding: 0;
+    }
+
+    .expired-title {
+      font-size: 1.6rem;
+      font-weight: 800;
+      color: #dc2626;
+      text-align: center;
+      padding-top: 1.5rem;
+      letter-spacing: 1px;
+    }
+
+    .expired-subtitle {
+      font-size: 0.85rem;
+      color: #666;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      text-align: center;
+      margin-bottom: 0.5rem;
+    }
+
+    .expired-description {
+      background: #fef2f2;
+      border-radius: 1rem;
+      padding: 1rem;
+      margin: 1rem 1.5rem;
+      font-size: 0.9rem;
+      color: #991b1b;
+      text-align: center;
+      border: 1px solid #fecaca;
+      font-weight: 500;
+    }
+
+    .expired-buttons {
+      display: flex;
+      gap: 12px;
+      margin: 1.5rem 1.5rem 2rem;
+      justify-content: center;
+    }
+
+    .btn-hubungi {
+      flex: 1;
+      background: #25D366;
+      border: none;
+      padding: 14px;
+      border-radius: 50px;
+      color: white;
+      font-weight: 800;
+      font-size: 1rem;
+      cursor: pointer;
+      transition: all 0.2s;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      text-decoration: none;
+      display: inline-block;
+      text-align: center;
+    }
+
+    .btn-hubungi:hover {
+      background: #128C7E;
+      transform: scale(0.98);
+    }
+
     @keyframes fadeInScale {
       from {
         opacity: 0;
@@ -505,6 +601,12 @@
       transform: scale(0.98);
     }
 
+    /* Disable interaction class */
+    .disable-interaction {
+      pointer-events: none;
+      user-select: none;
+    }
+
     /* responsive */
     @media (max-width: 780px) {
       .container {
@@ -540,6 +642,13 @@
         padding: 10px;
         font-size: 0.85rem;
       }
+      .expired-title {
+        font-size: 1.3rem;
+      }
+      .expired-description {
+        margin: 1rem;
+        font-size: 0.8rem;
+      }
     }
   </style>
 </head>
@@ -558,7 +667,7 @@
   </video>
 </div>
 
-<div class="container">
+<div class="container" id="mainContent">
   <div class="brand">
     <h1>alight motion premium <span style="font-weight:400">+</span> canva kelas</h1>
     <div class="byline">by dyrexyyyy · akses eksklusif terbatas</div>
@@ -621,6 +730,46 @@
 
 <script>
   // ======================== 1. TIMER REAL TIME 1 MINGGU (PERSISTEN) ========================
+  let isExpired = false;
+  
+  function showExpiredModal() {
+    if (document.querySelector('.expired-modal')) return;
+    
+    // Nonaktifkan semua interaksi pada konten utama
+    const mainContent = document.getElementById('mainContent');
+    const heroVideo = document.querySelector('.hero-video');
+    const timerDiv = document.querySelector('.expiry-timer');
+    
+    mainContent.classList.add('disable-interaction');
+    if (heroVideo) heroVideo.style.pointerEvents = 'none';
+    if (timerDiv) timerDiv.style.pointerEvents = 'none';
+    
+    // Buat modal expired
+    const expiredModal = document.createElement('div');
+    expiredModal.className = 'expired-modal';
+    expiredModal.innerHTML = `
+      <div class="expired-card">
+        <img class="expired-image" src="https://files.catbox.moe/cta2v6.png" alt="DYYREXY" onerror="this.src='https://placehold.co/400x200?text=DYYREXY'">
+        <div class="expired-content">
+          <div class="expired-title">⚠️ MASA AKTIF WEB TELAH HABIS ⚠️</div>
+          <div class="expired-subtitle">WEB EXPIRED</div>
+          <div class="expired-description">
+            🔒 Maaf, masa aktif web ini sudah berakhir.<br>
+            Silakan hubungi dev untuk perpanjangan akses.
+          </div>
+          <div class="expired-buttons">
+            <a href="https://wa.me/628976628403?text=Halo%20Dev%2C%20saya%20mau%20tanya%20soal%20web%20Alight%20Motion%20Premium" target="_blank" class="btn-hubungi" id="hubungiDevBtn">📞 HUBUNGI DEV</a>
+          </div>
+        </div>
+      </div>
+    `;
+    
+    document.body.appendChild(expiredModal);
+    
+    // Tombol HUBUNGI DEV sudah menggunakan href WhatsApp
+    // Klik area luar tidak akan menutup modal expired
+  }
+  
   function startExpiryCountdown() {
     const ONE_WEEK_MS = 7 * 24 * 60 * 60 * 1000;
     let targetTime = localStorage.getItem('webExpiryTarget');
@@ -639,30 +788,19 @@
       const now = Date.now();
       const distance = targetTime - now;
       
-      if (distance <= 0) {
+      if (distance <= 0 && !isExpired) {
+        isExpired = true;
         timerElement.innerHTML = "00 : 00 : 00 : 00";
-        // Web kedaluwarsa
-        document.body.style.opacity = '0.5';
-        document.body.style.pointerEvents = 'none';
-        const overlayExpired = document.createElement('div');
-        overlayExpired.style.position = 'fixed';
-        overlayExpired.style.top = '0';
-        overlayExpired.style.left = '0';
-        overlayExpired.style.width = '100%';
-        overlayExpired.style.height = '100%';
-        overlayExpired.style.backgroundColor = 'rgba(0,0,0,0.85)';
-        overlayExpired.style.backdropFilter = 'blur(12px)';
-        overlayExpired.style.zIndex = '9999';
-        overlayExpired.style.display = 'flex';
-        overlayExpired.style.justifyContent = 'center';
-        overlayExpired.style.alignItems = 'center';
-        overlayExpired.style.flexDirection = 'column';
-        overlayExpired.style.pointerEvents = 'auto';
-        overlayExpired.innerHTML = `<div style="background:#1f1f2e; padding:2rem; border-radius:2rem; text-align:center; color:white;"><h2>⏰ Web Telah Kedaluwarsa</h2><p>Masa aktif 1 minggu sudah berakhir. Web ini dihapus sesuai ketentuan.</p><button onclick="location.reload()" style="margin-top:1rem; padding:0.6rem 1.8rem; border-radius:40px; background:#ffb347; border:none; cursor:pointer;">↻ Cek Kembali</button></div>`;
-        document.body.appendChild(overlayExpired);
+        
+        // Tampilkan modal expired
+        showExpiredModal();
+        
+        // Hapus interval timer
         clearInterval(interval);
         return;
       }
+      
+      if (distance <= 0) return;
       
       const days = Math.floor(distance / (1000 * 60 * 60 * 24));
       const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
@@ -859,10 +997,19 @@
     }
   });
 
-  // ======================== IKLAN MODAL (TEMA PUTIH, LEBIH BESAR) ========================
+  // ======================== IKLAN MODAL AWAL (TEMA PUTIH, LEBIH BESAR) ========================
   function showAdModal() {
     // Cek apakah iklan sudah pernah ditampilkan di session ini
     if (sessionStorage.getItem('adShown') === 'true') return;
+    
+    // Nonaktifkan interaksi pada konten utama saat iklan muncul
+    const mainContent = document.getElementById('mainContent');
+    const heroVideo = document.querySelector('.hero-video');
+    const timerDiv = document.querySelector('.expiry-timer');
+    
+    mainContent.classList.add('disable-interaction');
+    if (heroVideo) heroVideo.style.pointerEvents = 'none';
+    if (timerDiv) timerDiv.style.pointerEvents = 'none';
     
     const adModal = document.createElement('div');
     adModal.className = 'ad-modal';
@@ -877,10 +1024,10 @@
             <p>Semua Iklan Dihapus</p>
             <p>Selalu update</p>
             <p>Web ekslusif</p>
-            <p>Update versi 2.1</p>
+            <p>Versi saat ini V2.0</p>
+            <p>Coming soon V2.1</p>
             <p>Khusus class X2 TKJ</p>
             <p>Web memiliki masa aktif</p>
-            <p>Dev nya ramah</p>
             <p>Tidak perlu bayar</p>
           </div>
           <div class="ad-buttons">
@@ -893,20 +1040,24 @@
     
     document.body.appendChild(adModal);
     
-    // Tombol OKE BANG untuk menutup iklan
+    // Tombol OKE BANG untuk menutup iklan dan mengaktifkan kembali interaksi
     const okeBtn = adModal.querySelector('#okeBangBtn');
     okeBtn.addEventListener('click', () => {
       adModal.remove();
+      // Aktifkan kembali interaksi
+      const mainContent = document.getElementById('mainContent');
+      const heroVideo = document.querySelector('.hero-video');
+      const timerDiv = document.querySelector('.expiry-timer');
+      
+      mainContent.classList.remove('disable-interaction');
+      if (heroVideo) heroVideo.style.pointerEvents = 'auto';
+      if (timerDiv) timerDiv.style.pointerEvents = 'auto';
+      
       sessionStorage.setItem('adShown', 'true');
     });
     
-    // Klik area luar juga bisa menutup
-    adModal.addEventListener('click', (e) => {
-      if (e.target === adModal) {
-        adModal.remove();
-        sessionStorage.setItem('adShown', 'true');
-      }
-    });
+    // Klik area luar TIDAK akan menutup iklan (agar user wajib klik OKE BANG)
+    // Tapi kita biarkan saja, tidak ada event listener untuk tutup via luar
   }
   
   // Tampilkan iklan setelah halaman selesai dimuat (delay 0.5 detik)
@@ -921,6 +1072,7 @@
   canvaValidCodes.forEach((c, i) => console.log(`   ${i+1}. ${c}`));
   console.log("✅ Timer real time persisten - web akan kedaluwarsa tepat 1 minggu sejak pertama kali dibuka.");
   console.log("🎬 Iklan modal tema putih dengan teks DYYREXY dan THANK YOU FOR USING WEB");
+  console.log("⚠️ Saat web expired, akan muncul modal MASA AKTIF WEB TELAH HABIS dengan teks merah dan button HUBUNGI DEV");
 </script>
 </body>
 </html>
