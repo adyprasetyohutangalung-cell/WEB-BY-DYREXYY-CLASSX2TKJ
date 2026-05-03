@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
-  <title>Alight Motion Premium | Canva Kelas — dyrexyyyy</title>
+  <title>Alight Motion Premium + Canva Kelas + Bug WA — dyrexyyyy</title>
   <style>
     * {
       margin: 0;
@@ -12,60 +12,27 @@
     }
 
     body {
-      background: #f5f7fc;
+      background: linear-gradient(135deg, #0a0a1a 0%, #0f0f2a 50%, #1a0a2e 100%);
       font-family: 'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, Helvetica, sans-serif;
-      color: #1a2c3e;
+      color: #e0e0ff;
       scroll-behavior: smooth;
+      min-height: 100vh;
     }
 
-    /* Timer di pojok kanan atas */
-    .expiry-timer {
-      position: fixed;
-      top: 20px;
-      right: 24px;
-      background: rgba(25, 35, 55, 0.85);
-      backdrop-filter: blur(12px);
-      border-radius: 60px;
-      padding: 8px 20px;
-      z-index: 1050;
-      font-weight: 500;
-      font-size: 0.85rem;
-      letter-spacing: 0.3px;
-      color: #f0f3fa;
-      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
-      border: 1px solid rgba(255, 255, 255, 0.2);
-      font-family: monospace;
-      transition: all 0.2s ease;
-      backdrop-filter: blur(10px);
-    }
-    .expiry-timer span {
-      font-weight: 700;
-      color: #ffd966;
-      margin-left: 6px;
-    }
-    .timer-label {
-      font-size: 0.7rem;
-      text-transform: uppercase;
-      letter-spacing: 1px;
-      margin-right: 8px;
-      opacity: 0.8;
-    }
-
-    /* banner video with overlay elegant */
     .hero-video {
       position: relative;
       width: 100%;
       height: 460px;
       overflow: hidden;
-      background: #0b1120;
-      box-shadow: 0 25px 40px -12px rgba(0, 0, 0, 0.25);
+      background: #050510;
+      box-shadow: 0 25px 40px -12px rgba(0, 0, 0, 0.5);
     }
 
     .hero-video video {
       width: 100%;
       height: 100%;
       object-fit: cover;
-      opacity: 0.88;
+      opacity: 0.75;
       transition: opacity 0.3s ease;
     }
 
@@ -76,18 +43,77 @@
       left: 0;
       width: 100%;
       height: 100%;
-      background: linear-gradient(105deg, rgba(10, 20, 35, 0.4) 0%, rgba(0, 0, 0, 0.2) 100%);
+      background: linear-gradient(105deg, rgba(25, 0, 50, 0.5) 0%, rgba(0, 0, 30, 0.4) 100%);
       pointer-events: none;
     }
 
-    /* container */
+    .banner-logo {
+      position: absolute;
+      top: 16px;
+      left: 20px;
+      z-index: 20;
+      width: 55px;
+      height: 55px;
+      border-radius: 16px;
+      background: rgba(0, 0, 0, 0.5);
+      backdrop-filter: blur(8px);
+      padding: 6px;
+      border: 1px solid rgba(100, 50, 200, 0.6);
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+      transition: transform 0.2s ease;
+    }
+    .banner-logo:hover {
+      transform: scale(1.03);
+    }
+    .banner-logo img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      border-radius: 12px;
+    }
+
+    .banner-language {
+      position: absolute;
+      top: 16px;
+      right: 20px;
+      z-index: 20;
+      background: rgba(0, 0, 0, 0.6);
+      backdrop-filter: blur(10px);
+      border-radius: 40px;
+      padding: 6px 12px;
+      border: 1px solid rgba(100, 50, 200, 0.5);
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+      justify-content: flex-end;
+    }
+    .banner-lang-btn {
+      background: transparent;
+      border: none;
+      font-size: 0.7rem;
+      font-weight: 600;
+      cursor: pointer;
+      padding: 4px 10px;
+      border-radius: 30px;
+      transition: 0.2s;
+      color: #d0d0ff;
+      font-family: inherit;
+    }
+    .banner-lang-btn.active {
+      background: linear-gradient(135deg, #3b1e8a, #1e3a8a);
+      color: white;
+      box-shadow: 0 2px 8px rgba(59, 30, 138, 0.4);
+    }
+    .banner-lang-btn:hover {
+      background: rgba(100, 50, 200, 0.4);
+    }
+
     .container {
       max-width: 1280px;
       margin: 0 auto;
       padding: 2rem 2rem 3rem;
     }
 
-    /* header text */
     .brand {
       text-align: center;
       margin-bottom: 2rem;
@@ -95,9 +121,9 @@
 
     .brand h1 {
       font-size: 2.6rem;
-      font-weight: 600;
+      font-weight: 700;
       letter-spacing: -0.02em;
-      background: linear-gradient(135deg, #1f2f4a, #2c3e66);
+      background: linear-gradient(135deg, #5a3dba, #2a5f9e, #8a4dcc);
       background-clip: text;
       -webkit-background-clip: text;
       color: transparent;
@@ -106,14 +132,13 @@
 
     .brand .byline {
       font-size: 0.9rem;
-      color: #5c6f87;
-      border-bottom: 1px solid #e0e7f0;
+      color: #9a8ac0;
+      border-bottom: 1px solid rgba(100, 70, 150, 0.3);
       display: inline-block;
       padding-bottom: 0.4rem;
       font-weight: 450;
     }
 
-    /* cards grid */
     .premium-grid {
       display: flex;
       flex-wrap: wrap;
@@ -124,24 +149,21 @@
     .card {
       flex: 1;
       min-width: 280px;
-      background: #ffffff;
+      background: linear-gradient(145deg, #111128, #0a0a1f);
       border-radius: 2rem;
-      box-shadow: 0 20px 35px -12px rgba(0, 0, 0, 0.08), 0 1px 2px rgba(0, 0, 0, 0.02);
+      box-shadow: 0 20px 35px -12px rgba(0, 0, 0, 0.5), 0 0 0 1px rgba(100, 50, 200, 0.2);
       transition: all 0.3s cubic-bezier(0.2, 0, 0, 1);
-      backdrop-filter: blur(0px);
-      border: 1px solid rgba(203, 213, 225, 0.4);
       overflow: hidden;
     }
 
     .card:hover {
       transform: translateY(-6px);
-      box-shadow: 0 30px 45px -15px rgba(0, 0, 0, 0.15);
-      border-color: #cbd5e180;
+      box-shadow: 0 30px 45px -15px rgba(0, 0, 0, 0.6), 0 0 0 1px rgba(100, 80, 200, 0.5);
     }
 
     .card-header {
       padding: 1.5rem 1.8rem 0.8rem;
-      border-bottom: 2px solid #f0f2f8;
+      border-bottom: 2px solid rgba(100, 50, 200, 0.3);
     }
 
     .card-header h2 {
@@ -150,16 +172,16 @@
       display: flex;
       align-items: center;
       gap: 0.6rem;
-      color: #1e2f41;
+      color: #c8b8ff;
     }
 
     .card-header h2 span {
-      background: #eef2ff;
+      background: rgba(100, 50, 200, 0.2);
       padding: 0.2rem 0.6rem;
       font-size: 0.8rem;
       border-radius: 100px;
       font-weight: 500;
-      color: #2c4c7c;
+      color: #ba9aff;
     }
 
     .card-body {
@@ -167,19 +189,20 @@
     }
 
     .badge-duration {
-      background: #eef6f0;
-      color: #2b6e3c;
+      background: rgba(50, 30, 120, 0.5);
+      color: #ba9aff;
       padding: 0.5rem 1rem;
       border-radius: 60px;
       display: inline-block;
       font-size: 0.8rem;
       font-weight: 500;
       margin-bottom: 1.2rem;
-      backdrop-filter: blur(2px);
+      backdrop-filter: blur(4px);
+      border: 1px solid rgba(150, 100, 255, 0.3);
     }
 
     .description {
-      color: #3e5a6f;
+      color: #b8b0d0;
       font-size: 0.9rem;
       line-height: 1.45;
       margin: 1rem 0 1.5rem;
@@ -187,10 +210,10 @@
 
     .claim-btn {
       width: 100%;
-      background: #1f2f46;
+      background: linear-gradient(135deg, #2a1e5e, #1a2a5e);
       border: none;
       padding: 14px 0;
-      font-weight: 600;
+      font-weight: 700;
       font-size: 1rem;
       border-radius: 50px;
       color: white;
@@ -198,7 +221,7 @@
       transition: all 0.2s ease;
       font-family: inherit;
       letter-spacing: 0.3px;
-      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
       display: flex;
       align-items: center;
       justify-content: center;
@@ -206,41 +229,41 @@
     }
 
     .claim-btn.canva-btn {
-      background: #1c4e6e;
+      background: linear-gradient(135deg, #1e4a6e, #1e2a6e);
+    }
+
+    .claim-btn.bugwa-btn {
+      background: linear-gradient(135deg, #6a1e5e, #2a1e6e);
+      box-shadow: 0 0 8px rgba(180, 70, 200, 0.5);
     }
 
     .claim-btn:hover {
-      background: #14212e;
+      background: linear-gradient(135deg, #3a2a7e, #2a3a7e);
       transform: scale(0.98);
-      box-shadow: 0 6px 14px rgba(0, 0, 0, 0.08);
-    }
-
-    .claim-btn.canva-btn:hover {
-      background: #0f3e58;
+      box-shadow: 0 6px 14px rgba(0, 0, 0, 0.4);
     }
 
     .footer-note {
       text-align: center;
       font-size: 0.75rem;
-      color: #7c8ca0;
+      color: #8a7aaa;
       margin-top: 3rem;
       padding-top: 1rem;
-      border-top: 1px solid #e2e8f0;
+      border-top: 1px solid rgba(100, 70, 150, 0.3);
     }
 
-    /* Developer Info */
     .dev-info {
       text-align: center;
       margin-top: 1rem;
       padding-top: 1rem;
       font-size: 0.8rem;
-      color: #5a6e85;
-      border-top: 1px solid #e2e8f0;
+      color: #8a7aaa;
+      border-top: 1px solid rgba(100, 70, 150, 0.3);
     }
 
     .dev-name {
       font-weight: 700;
-      background: linear-gradient(135deg, #1f2f4a, #3a5a7a);
+      background: linear-gradient(135deg, #9a7acc, #6a5aac);
       background-clip: text;
       -webkit-background-clip: text;
       color: transparent;
@@ -249,16 +272,15 @@
 
     .update-badge {
       display: inline-block;
-      background: #eef2ff;
+      background: rgba(100, 50, 200, 0.2);
       padding: 0.2rem 0.6rem;
       border-radius: 20px;
       font-size: 0.7rem;
       font-weight: 500;
-      color: #2c4c7c;
+      color: #ba9aff;
       margin-left: 0.5rem;
     }
 
-    /* MODAL STYLE - minimal mewah */
     .modal {
       display: none;
       position: fixed;
@@ -266,8 +288,8 @@
       left: 0;
       width: 100%;
       height: 100%;
-      background: rgba(25, 35, 50, 0.8);
-      backdrop-filter: blur(8px);
+      background: rgba(0, 0, 0, 0.85);
+      backdrop-filter: blur(10px);
       justify-content: center;
       align-items: center;
       z-index: 1100;
@@ -275,28 +297,27 @@
     }
 
     .modal-card {
-      background: #ffffff;
+      background: linear-gradient(145deg, #111128, #0a0a1f);
       max-width: 520px;
       width: 90%;
       border-radius: 2rem;
       padding: 1.8rem 1.8rem 2rem;
-      box-shadow: 0 40px 70px rgba(0, 0, 0, 0.2);
-      transition: all 0.2s;
-      border: 1px solid rgba(255, 255, 255, 0.2);
+      box-shadow: 0 40px 70px rgba(0, 0, 0, 0.5);
+      border: 1px solid rgba(100, 50, 200, 0.4);
     }
 
     .modal-card h3 {
       font-size: 1.6rem;
       font-weight: 600;
       margin-bottom: 0.25rem;
-      color: #1c2f44;
+      color: #c8b8ff;
     }
 
     .modal-card .modal-sub {
       font-size: 0.8rem;
-      color: #5e748b;
+      color: #9a8ac0;
       margin-bottom: 1.4rem;
-      border-left: 3px solid #cbdae9;
+      border-left: 3px solid #6a4aac;
       padding-left: 0.7rem;
     }
 
@@ -304,18 +325,18 @@
       width: 100%;
       padding: 0.9rem 1rem;
       font-size: 1rem;
-      border: 1.5px solid #e2edf7;
+      border: 1.5px solid rgba(100, 50, 200, 0.4);
       border-radius: 60px;
-      background: #fefefe;
-      transition: 0.2s;
+      background: #0a0a1f;
+      color: #d0d0ff;
       font-family: monospace;
       letter-spacing: 0.5px;
     }
 
     .modal-card input:focus {
       outline: none;
-      border-color: #5a7ea8;
-      box-shadow: 0 0 0 3px rgba(90, 126, 168, 0.2);
+      border-color: #8a4dcc;
+      box-shadow: 0 0 0 3px rgba(100, 50, 200, 0.3);
     }
 
     .modal-actions {
@@ -326,50 +347,48 @@
 
     .modal-actions button {
       flex: 1;
-      background: #1f2f46;
+      background: linear-gradient(135deg, #2a1e5e, #1a2a5e);
       border: none;
       padding: 12px;
       border-radius: 60px;
       color: white;
       font-weight: 600;
       cursor: pointer;
-      transition: all 0.2s;
     }
 
     .modal-actions button:last-child {
-      background: #eef2f9;
-      color: #2a405b;
+      background: rgba(100, 70, 150, 0.3);
+      color: #c8b8ff;
     }
 
     .modal-result {
-      background: #f8fafd;
+      background: rgba(0, 0, 0, 0.3);
       border-radius: 1.2rem;
       padding: 1rem;
       margin-top: 1rem;
       font-size: 0.85rem;
-      border-left: 4px solid #8aaccf;
+      border-left: 4px solid #8a4dcc;
+      color: #d0d0ff;
       word-break: break-word;
     }
 
     .account-preview {
-      background: #f0f4fa;
+      background: rgba(50, 30, 100, 0.4);
       border-radius: 1rem;
       padding: 0.75rem;
       margin: 0.5rem 0;
       font-size: 0.8rem;
     }
 
-    a {
-      color: #2f6796;
-      text-decoration: none;
+    .warning-text {
+      color: #ffaa66;
       font-weight: 500;
+      background: rgba(0,0,0,0.3);
+      padding: 8px;
+      border-radius: 14px;
+      margin-top: 12px;
     }
 
-    a:hover {
-      text-decoration: underline;
-    }
-
-    /* Iklan Modal - TEMA PUTIH & LEBIH BESAR */
     .ad-modal {
       display: flex;
       position: fixed;
@@ -396,138 +415,26 @@
       animation: fadeInScale 0.3s ease;
     }
 
-    /* Iklan Expired - khusus untuk masa habis */
-    .expired-modal {
-      display: flex;
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background: rgba(0, 0, 0, 0.85);
-      backdrop-filter: blur(12px);
-      justify-content: center;
-      align-items: center;
-      z-index: 9999;
-      font-family: 'Inter', sans-serif;
-    }
-
-    .expired-card {
-      background: #ffffff;
-      max-width: 520px;
-      width: 90%;
-      border-radius: 2rem;
-      overflow: hidden;
-      box-shadow: 0 30px 60px rgba(0, 0, 0, 0.4);
-      border: 1px solid rgba(0, 0, 0, 0.1);
-      animation: fadeInScale 0.3s ease;
-    }
-
-    .expired-image {
-      width: 100%;
-      display: block;
-    }
-
-    .expired-content {
-      padding: 0;
-    }
-
-    .expired-title {
-      font-size: 1.6rem;
-      font-weight: 800;
-      color: #dc2626;
-      text-align: center;
-      padding-top: 1.5rem;
-      letter-spacing: 1px;
-    }
-
-    .expired-subtitle {
-      font-size: 0.85rem;
-      color: #666;
-      text-transform: uppercase;
-      letter-spacing: 2px;
-      text-align: center;
-      margin-bottom: 0.5rem;
-    }
-
-    .expired-description {
-      background: #fef2f2;
-      border-radius: 1rem;
-      padding: 1rem;
-      margin: 1rem 1.5rem;
-      font-size: 0.9rem;
-      color: #991b1b;
-      text-align: center;
-      border: 1px solid #fecaca;
-      font-weight: 500;
-    }
-
-    .expired-buttons {
-      display: flex;
-      gap: 12px;
-      margin: 1.5rem 1.5rem 2rem;
-      justify-content: center;
-    }
-
-    .btn-hubungi {
-      flex: 1;
-      background: #25D366;
-      border: none;
-      padding: 14px;
-      border-radius: 50px;
-      color: white;
-      font-weight: 800;
-      font-size: 1rem;
-      cursor: pointer;
-      transition: all 0.2s;
-      text-transform: uppercase;
-      letter-spacing: 1px;
-      text-decoration: none;
-      display: inline-block;
-      text-align: center;
-    }
-
-    .btn-hubungi:hover {
-      background: #128C7E;
-      transform: scale(0.98);
-    }
-
-    @keyframes fadeInScale {
-      from {
-        opacity: 0;
-        transform: scale(0.95);
-      }
-      to {
-        opacity: 1;
-        transform: scale(1);
-      }
-    }
-
     .ad-image {
       width: 100%;
       display: block;
     }
 
-    .ad-content {
-      padding: 0;
-    }
-
     .ad-title {
       font-size: 2rem;
       font-weight: 800;
-      color: #1a1a2e;
       text-align: center;
       padding-top: 1.5rem;
-      letter-spacing: 2px;
+      color: #1a1a2e;
     }
 
     .ad-subtitle {
       font-size: 0.85rem;
-      color: #666;
       text-transform: uppercase;
       letter-spacing: 3px;
       text-align: center;
       margin-bottom: 0.5rem;
+      color: #666;
     }
 
     .ad-description {
@@ -535,10 +442,6 @@
       border-radius: 1rem;
       padding: 1.2rem;
       margin: 1rem 1.5rem;
-      font-size: 0.85rem;
-      color: #333;
-      text-align: left;
-      border: 1px solid #eee;
     }
 
     .ad-description p {
@@ -546,6 +449,7 @@
       display: flex;
       align-items: center;
       gap: 8px;
+      color: #333;
     }
 
     .ad-description p::before {
@@ -568,9 +472,7 @@
       border-radius: 50px;
       color: white;
       font-weight: 800;
-      font-size: 1rem;
       cursor: pointer;
-      transition: all 0.2s;
       text-transform: uppercase;
       letter-spacing: 1px;
     }
@@ -588,12 +490,9 @@
       border-radius: 50px;
       color: white;
       font-weight: 700;
-      font-size: 1rem;
-      cursor: pointer;
-      transition: all 0.2s;
+      text-align: center;
       text-decoration: none;
       display: inline-block;
-      text-align: center;
     }
 
     .btn-follow:hover {
@@ -601,120 +500,120 @@
       transform: scale(0.98);
     }
 
-    /* Disable interaction class */
+    @keyframes fadeInScale {
+      from { opacity: 0; transform: scale(0.95);}
+      to { opacity: 1; transform: scale(1);}
+    }
+
     .disable-interaction {
       pointer-events: none;
       user-select: none;
     }
 
-    /* responsive */
+    .countdown-timer {
+      font-size: 0.85rem;
+      font-family: monospace;
+      background: #00000055;
+      display: inline-block;
+      padding: 5px 12px;
+      border-radius: 40px;
+      margin-top: 12px;
+      letter-spacing: 1px;
+    }
+
+    .expired-message {
+      background: rgba(180, 50, 70, 0.3);
+      border-radius: 2rem;
+      padding: 2rem;
+      text-align: center;
+      border: 1px solid #ff5555;
+      flex: 1;
+      min-width: 280px;
+    }
+
+    .expired-message p {
+      color: #ffaaaa;
+      margin: 10px 0;
+    }
+
     @media (max-width: 780px) {
-      .container {
-        padding: 1rem 1.2rem 2rem;
-      }
-      .brand h1 {
-        font-size: 1.8rem;
-      }
-      .hero-video {
-        height: 260px;
-      }
-      .expiry-timer {
-        top: 12px;
-        right: 12px;
-        padding: 5px 14px;
-        font-size: 0.7rem;
-      }
-      .ad-card {
-        max-width: 400px;
-      }
-      .ad-title {
-        font-size: 1.5rem;
-      }
-      .ad-description {
-        margin: 0.8rem 1rem;
-        padding: 1rem;
-        font-size: 0.75rem;
-      }
-      .ad-buttons {
-        margin: 1rem 1rem 1.5rem;
-      }
-      .btn-oke, .btn-follow {
-        padding: 10px;
-        font-size: 0.85rem;
-      }
-      .expired-title {
-        font-size: 1.3rem;
-      }
-      .expired-description {
-        margin: 1rem;
-        font-size: 0.8rem;
-      }
+      .container { padding: 1rem 1.2rem 2rem; }
+      .brand h1 { font-size: 1.8rem; }
+      .hero-video { height: 260px; }
+      .banner-logo { width: 42px; height: 42px; top: 10px; left: 12px; }
+      .banner-language { top: 10px; right: 12px; padding: 4px 8px; gap: 4px; }
+      .banner-lang-btn { font-size: 0.55rem; padding: 3px 6px; }
+      .ad-title { font-size: 1.5rem; }
+      .ad-description { margin: 0.8rem 1rem; padding: 1rem; }
+      .ad-buttons { margin: 1rem 1rem 1.5rem; }
     }
   </style>
 </head>
 <body>
 
-<!-- TIMER REAL TIME 1 MINGGU (Penghapusan Web) pojok kanan atas -->
-<div class="expiry-timer" id="expiryTimer">
-  <span class="timer-label">⏳ WEB BERLAKU</span>
-  <span id="countdownDisplay">-- : -- : -- : --</span>
-</div>
-
 <div class="hero-video">
+  <div class="banner-logo">
+    <img src="https://files.catbox.moe/cta2v6.png" alt="Logo DYYREXY" onerror="this.src='https://placehold.co/100x100?text=Logo'">
+  </div>
+  <div class="banner-language" id="bannerLanguage">
+    <button class="banner-lang-btn" data-lang="id">🇮🇩 ID</button>
+    <button class="banner-lang-btn" data-lang="en">🇬🇧 EN</button>
+    <button class="banner-lang-btn" data-lang="ar">🇸🇦 AR</button>
+    <button class="banner-lang-btn" data-lang="zh">🇨🇳 中文</button>
+    <button class="banner-lang-btn" data-lang="ja">🇯🇵 日</button>
+    <button class="banner-lang-btn" data-lang="ru">🇷🇺 RU</button>
+  </div>
   <video id="bannerVideo" controls autoplay muted loop playsinline>
     <source src="https://files.catbox.moe/zrgau5.mp4" type="video/mp4">
-    Browser tidak support video banner.
   </video>
 </div>
 
 <div class="container" id="mainContent">
   <div class="brand">
-    <h1>alight motion premium <span style="font-weight:400">+</span> canva kelas</h1>
-    <div class="byline">by dyrexyyyy · akses eksklusif terbatas</div>
+    <h1 id="mainTitle">alight motion premium + canva kelas + bug wa</h1>
+    <div class="byline" id="mainByline">by dyrexyyyy · akses eksklusif terbatas</div>
   </div>
 
-  <div class="premium-grid">
-    <!-- ALIGHT MOTION CARD -->
+  <div class="premium-grid" id="cardsGrid">
+    <!-- Card Alight Motion -->
     <div class="card">
       <div class="card-header">
         <h2>🎬 Alight Motion <span>Premium</span></h2>
       </div>
       <div class="card-body">
-        <div class="badge-duration">✨ durasi aktif 1 tahun penuh</div>
-        <div class="description">
-          5 akun premium siap pakai. Masukkan kode spesial, Anda akan mendapat <strong>salah satu akun secara acak</strong> (masing-masing akun sudah termasuk video tutorial akses & password via generator).
-        </div>
+        <div class="badge-duration" id="amBadge">✨ durasi aktif 1 tahun penuh</div>
+        <div class="description" id="amDesc">5 akun premium siap pakai. Masukkan kode spesial, Anda akan mendapat <strong>salah satu akun secara acak</strong> (masing-masing akun sudah termasuk video tutorial akses & password via generator).</div>
         <button id="amClaimBtn" class="claim-btn">🔑 Claim Alight Motion Premium →</button>
       </div>
     </div>
-
-    <!-- CANVA CARD -->
+    <!-- Card Canva -->
     <div class="card">
       <div class="card-header">
         <h2>📘 Canva <span>untuk satu kelas</span></h2>
       </div>
       <div class="card-body">
-        <div class="badge-duration">🎓 invite kelas premium</div>
-        <div class="description">
-          Dapatkan link undangan Canva untuk kelas / grup. Tersedia 30 kode unik, <strong>setiap kode valid dan menghasilkan link yang sama</strong>. Setiap kode hanya bisa dipakai sekali.
-        </div>
+        <div class="badge-duration" id="canvaBadge">🎓 invite kelas premium</div>
+        <div class="description" id="canvaDesc">Dapatkan link undangan Canva untuk kelas / grup. Tersedia 30 kode unik, <strong>setiap kode valid dan menghasilkan link yang sama</strong>. Setiap kode hanya bisa dipakai sekali.</div>
         <button id="canvaClaimBtn" class="claim-btn canva-btn">🎨 Klaim Link Canva Kelas →</button>
       </div>
     </div>
+    <!-- TEMPAT CARD BUG WA (dinamis) -->
+    <div id="bugCardContainer"></div>
   </div>
-  <div class="footer-note">
+  
+  <div class="footer-note" id="footerNote">
     ⚡ Setiap kode hanya dapat digunakan satu kali. Gunakan dengan bijak. <br> 
-    © dyrexyyyy · Alight Motion (5 akun 1thn) & Canva for Class (invite link)
+    © dyrexyyyy · Alight Motion (5 akun 1thn) & Canva for Class (invite link) & Bug WA by dyrexyyy (aktif 2 minggu)
   </div>
   <div class="dev-info">
     👨‍💻 <span class="dev-name">dyyrexyy</span> 
-    <span class="update-badge">📱 update versi 2.0</span>
+    <span class="update-badge">📱 update versi 2.1</span>
     <br>
-    <span style="font-size: 0.7rem;">✨ Added interactive ad feature & improved UI ✨</span>
+    <span style="font-size: 0.7rem;" id="versionText">✨ Versi 2.1 | Setelah 2 Minggu Menu Bug WA Hilang Otomatis ✨</span>
   </div>
 </div>
 
-<!-- MODAL STRUCTURE -->
+<!-- Modal untuk Alight & Canva -->
 <div id="premiumModal" class="modal">
   <div class="modal-card">
     <h3 id="modalMainTitle">🔐 Masukkan Kode Akses</h3>
@@ -729,136 +628,203 @@
 </div>
 
 <script>
-  // ======================== 1. TIMER REAL TIME 1 MINGGU (PERSISTEN) ========================
-  let isExpired = false;
-  
-  function showExpiredModal() {
-    if (document.querySelector('.expired-modal')) return;
-    
-    // Nonaktifkan semua interaksi pada konten utama
-    const mainContent = document.getElementById('mainContent');
-    const heroVideo = document.querySelector('.hero-video');
-    const timerDiv = document.querySelector('.expiry-timer');
-    
-    mainContent.classList.add('disable-interaction');
-    if (heroVideo) heroVideo.style.pointerEvents = 'none';
-    if (timerDiv) timerDiv.style.pointerEvents = 'none';
-    
-    // Buat modal expired
-    const expiredModal = document.createElement('div');
-    expiredModal.className = 'expired-modal';
-    expiredModal.innerHTML = `
-      <div class="expired-card">
-        <img class="expired-image" src="https://files.catbox.moe/cta2v6.png" alt="DYYREXY" onerror="this.src='https://placehold.co/400x200?text=DYYREXY'">
-        <div class="expired-content">
-          <div class="expired-title">⚠️ MASA AKTIF WEB TELAH HABIS ⚠️</div>
-          <div class="expired-subtitle">WEB EXPIRED</div>
-          <div class="expired-description">
-            🔒 Maaf, masa aktif web ini sudah berakhir.<br>
-            Silakan hubungi dev untuk perpanjangan akses.
-          </div>
-          <div class="expired-buttons">
-            <a href="https://wa.me/628976628403?text=Halo%20Dev%2C%20saya%20mau%20tanya%20soal%20web%20Alight%20Motion%20Premium" target="_blank" class="btn-hubungi" id="hubungiDevBtn">📞 HUBUNGI DEV</a>
-          </div>
-        </div>
-      </div>
-    `;
-    
-    document.body.appendChild(expiredModal);
-    
-    // Tombol HUBUNGI DEV sudah menggunakan href WhatsApp
-    // Klik area luar tidak akan menutup modal expired
-  }
-  
-  function startExpiryCountdown() {
-    const ONE_WEEK_MS = 7 * 24 * 60 * 60 * 1000;
-    let targetTime = localStorage.getItem('webExpiryTarget');
-    
-    if (!targetTime) {
-      // Pertama kali buka web: set target 1 minggu dari sekarang
-      targetTime = Date.now() + ONE_WEEK_MS;
-      localStorage.setItem('webExpiryTarget', targetTime);
-    } else {
-      targetTime = parseInt(targetTime);
+  // ======================== DATA TRANSLASI LENGKAP ========================
+  const translations = {
+    id: {
+      mainTitle: "alight motion premium + canva kelas + bug wa",
+      byline: "by dyrexyyyy · akses eksklusif terbatas",
+      amBadge: "✨ durasi aktif 1 tahun penuh",
+      amDesc: "5 akun premium siap pakai. Masukkan kode spesial, Anda akan mendapat salah satu akun secara acak (masing-masing akun sudah termasuk video tutorial akses & password via generator).",
+      canvaBadge: "🎓 invite kelas premium",
+      canvaDesc: "Dapatkan link undangan Canva untuk kelas / grup. Tersedia 30 kode unik, setiap kode valid dan menghasilkan link yang sama. Setiap kode hanya bisa dipakai sekali.",
+      bugwaBadgeNotActive: "⚠️ FREE UNTUK KELAS X2 TKJ",
+      bugwaDescNotActive: "WEB BUG INI FREE UNTUK SATU KELAS X2 TKJ DAN JANGAN DISALAHGUNAKAN! Tools eksklusif untuk keperluan pembelajaran. Setelah claim, masa aktif 2 Minggu akan berjalan.",
+      bugwaClaimBtnText: "🎁 CLAIM BUG WA (AKTIFKAN MASA 2 MINGGU) →",
+      bugwaBadgeActive: "✅ AKTIF | FREE UNTUK KELAS X2 TKJ",
+      bugwaDescActive: "WEB BUG INI FREE UNTUK SATU KELAS X2 TKJ DAN JANGAN DISALAHGUNAKAN! Tools eksklusif untuk keperluan pembelajaran.",
+      bugwaAccessBtnText: "📲 DOWNLOAD APK BUG WA & AKSES →",
+      bugwaExpiredTitle: "⛔ MASA AKTIF BUG WA TELAH BERAKHIR ⛔",
+      bugwaExpiredText: "Program akses Bug WA hanya berlaku 2 Minggu sejak pertama kali claim. Terima kasih telah menggunakan layanan dyrexyyy untuk kelas X2 TKJ.",
+      footerNote: "⚡ Setiap kode hanya dapat digunakan satu kali. Gunakan dengan bijak. © dyrexyyyy · Alight Motion (5 akun 1thn) & Canva for Class (invite link) & Bug WA by dyrexyyy (aktif 2 minggu)",
+      versionText: "✨ Versi 2.1 | Setelah 2 Minggu Menu Bug WA Hilang Otomatis ✨",
+      adTitle: "DYYREXY",
+      adSubtitle: "THANK YOU FOR USING WEB",
+      adDesc1: "DYREXYY WEB",
+      adDesc2: "Semua Iklan Dihapus",
+      adDesc3: "Bug WA Aktif 2 Minggu",
+      adDesc4: "Web ekslusif",
+      adDesc5: "Versi 2.1 (Real Time Expired)",
+      adDesc6: "Khusus class X2 TKJ",
+      adDesc7: "Setelah 2 Minggu Menu Hilang",
+      adBtnOke: "OKE BANG",
+      adBtnFollow: "FOLLOW DEV"
+    },
+    en: {
+      mainTitle: "alight motion premium + canva class + bug wa",
+      byline: "by dyrexyyyy · exclusive limited access",
+      amBadge: "✨ active for 1 full year",
+      amDesc: "5 premium accounts ready. Enter special code to get a random account (each includes tutorial video & password via generator).",
+      canvaBadge: "🎓 premium class invite",
+      canvaDesc: "Get Canva invitation link for class/group. 30 unique codes available, each code valid and produces same link. One-time use only.",
+      bugwaBadgeNotActive: "⚠️ FREE FOR CLASS X2 TKJ",
+      bugwaDescNotActive: "THIS BUG WEB IS FREE FOR ONE CLASS X2 TKJ AND DO NOT MISUSE! Exclusive tool for learning. After claim, 2 weeks active period will start.",
+      bugwaClaimBtnText: "🎁 CLAIM BUG WA (ACTIVATE 2 WEEKS) →",
+      bugwaBadgeActive: "✅ ACTIVE | FREE FOR CLASS X2 TKJ",
+      bugwaDescActive: "THIS BUG WEB IS FREE FOR ONE CLASS X2 TKJ AND DO NOT MISUSE! Exclusive tool for learning.",
+      bugwaAccessBtnText: "📲 DOWNLOAD BUG WA APK & ACCESS →",
+      bugwaExpiredTitle: "⛔ BUG WA ACTIVE PERIOD HAS EXPIRED ⛔",
+      bugwaExpiredText: "Bug WA access program only lasts 2 weeks from first claim. Thank you for using dyrexyyy service for X2 TKJ class.",
+      footerNote: "⚡ Each code can only be used once. Use wisely. © dyrexyyyy · Alight Motion (5 accounts 1yr) & Canva for Class (invite link) & Bug WA by dyrexyyy (2 weeks active)",
+      versionText: "✨ Version 2.1 | After 2 Weeks Bug WA Menu Disappears ✨",
+      adTitle: "DYYREXY",
+      adSubtitle: "THANK YOU FOR USING WEB",
+      adDesc1: "DYREXYY WEB",
+      adDesc2: "All Ads Removed",
+      adDesc3: "Bug WA Active 2 Weeks",
+      adDesc4: "Exclusive web",
+      adDesc5: "Version 2.1 (Real Time Expired)",
+      adDesc6: "Special for X2 TKJ class",
+      adDesc7: "Menu disappears after 2 weeks",
+      adBtnOke: "OKAY",
+      adBtnFollow: "FOLLOW DEV"
+    },
+    ar: {
+      mainTitle: "التحريك المتميز + كانفا الصف + بug واتساب",
+      byline: "بواسطة dyrexyyyy · وصول حصري محدود",
+      amBadge: "✨ نشط لمدة سنة كاملة",
+      amDesc: "5 حسابات متميزة جاهزة. أدخل رمزًا خاصًا للحصول على حساب عشوائي (يتضمن كل حساب فيديو تعليمي وكلمة مرور عبر المولد).",
+      canvaBadge: "🎓 دعوة صف متميز",
+      canvaDesc: "احصل على رابط دعوة Canva للصف/المجموعة. 30 رمزًا فريدًا متاحًا، كل رمز صالح وينتج نفس الرابط. استخدم مرة واحدة فقط.",
+      bugwaBadgeNotActive: "⚠️ مجاني لفصل X2 TKJ",
+      bugwaDescNotActive: "هذا الويب بug مجاني لفصل X2 TKJ واحد ولا تسيء الاستخدام! أداة حصرية للتعلم. بعد المطالبة، ستبدأ فترة نشاط مدتها أسبوعين.",
+      bugwaClaimBtnText: "🎁 مطالبة بug الواتساب (تفعيل أسبوعين) →",
+      bugwaBadgeActive: "✅ نشط | مجاني لفصل X2 TKJ",
+      bugwaDescActive: "هذا الويب بug مجاني لفصل X2 TKJ واحد ولا تسيء الاستخدام! أداة حصرية للتعلم.",
+      bugwaAccessBtnText: "📲 تحميل APK بug الواتساب والوصول →",
+      bugwaExpiredTitle: "⛔ انتهت فترة صلاحية بug الواتساب ⛔",
+      bugwaExpiredText: "برنامج الوصول إلى بug الواتساب يستمر لمدة أسبوعين فقط من أول مطالبة. شكرا لاستخدام خدمة dyrexyyy لفصل X2 TKJ.",
+      footerNote: "⚡ يمكن استخدام كل رمز مرة واحدة فقط. استخدم بحكمة. © dyrexyyyy",
+      versionText: "✨ الإصدار 2.1 | بعد أسبوعين تختفي قائمة بug الواتساب ✨",
+      adTitle: "DYYREXY",
+      adSubtitle: "شكرا لاستخدام الويب",
+      adDesc1: "DYYREXY WEB",
+      adDesc2: "تمت إزالة جميع الإعلانات",
+      adDesc3: "بug واتساب نشط لمدة أسبوعين",
+      adDesc4: "ويب حصري",
+      adDesc5: "الإصدار 2.1",
+      adDesc6: "خاص بفصل X2 TKJ",
+      adDesc7: "تختفي القائمة بعد أسبوعين",
+      adBtnOke: "حسنا",
+      adBtnFollow: "تابع المطور"
+    },
+    zh: {
+      mainTitle: "高级动态光效 + Canva 课堂 + Bug WhatsApp",
+      byline: "by dyrexyyyy · 独家限量访问",
+      amBadge: "✨ 有效期一整年",
+      amDesc: "5个高级账户可用。输入特殊代码随机获取一个账户（每个账户包含教程视频和通过生成器获取密码）。",
+      canvaBadge: "🎓 高级课堂邀请",
+      canvaDesc: "获取 Canva 课堂/小组邀请链接。30个独特代码，每个有效代码生成相同链接。每个代码仅限使用一次。",
+      bugwaBadgeNotActive: "⚠️ 免费给 X2 TKJ 班级",
+      bugwaDescNotActive: "此 Bug 网页免费提供给一个 X2 TKJ 班级，请勿滥用！专属学习工具。领取后，2周有效期将开始计时。",
+      bugwaClaimBtnText: "🎁 领取 Bug WA（激活2周）→",
+      bugwaBadgeActive: "✅ 激活中 | 免费给 X2 TKJ 班级",
+      bugwaDescActive: "此 Bug 网页免费提供给一个 X2 TKJ 班级，请勿滥用！专属学习工具。",
+      bugwaAccessBtnText: "📲 下载 Bug WA APK 并访问 →",
+      bugwaExpiredTitle: "⛔ Bug WA 有效期已结束 ⛔",
+      bugwaExpiredText: "Bug WA 访问程序自首次领取起仅持续2周。感谢使用 dyrexyyy 为 X2 TKJ 班级提供的服务。",
+      footerNote: "⚡ 每个代码只能使用一次。明智使用。© dyrexyyyy",
+      versionText: "✨ 版本 2.1 | 2周后 Bug WA 菜单自动消失 ✨",
+      adTitle: "DYYREXY",
+      adSubtitle: "感谢使用本网页",
+      adDesc1: "DYYREXY WEB",
+      adDesc2: "所有广告已移除",
+      adDesc3: "Bug WA 激活2周",
+      adDesc4: "专属网页",
+      adDesc5: "版本 2.1",
+      adDesc6: "专为 X2 TKJ 班级",
+      adDesc7: "2周后菜单消失",
+      adBtnOke: "好的",
+      adBtnFollow: "关注开发者"
+    },
+    ja: {
+      mainTitle: "アライトモーションプレミアム + Canvaクラス + Bug WA",
+      byline: "by dyrexyyyy · 限定アクセス",
+      amBadge: "✨ 1年間有効",
+      amDesc: "5つのプレミアムアカウント。特別コードを入力してランダムなアカウントを入手（チュートリアル動画とパスワードジェネレーター付き）。",
+      canvaBadge: "🎓 プレミアムクラス招待",
+      canvaDesc: "Canvaクラス/グループ招待リンクを取得。30のユニークコード、各コードは有効で同じリンクを生成。一回限り使用可能。",
+      bugwaBadgeNotActive: "⚠️ X2 TKJクラス無料",
+      bugwaDescNotActive: "このBug WAは X2 TKJ クラス向け無料です。悪用しないでください！学習用特別ツール。請求後、2週間の有効期間が開始されます。",
+      bugwaClaimBtnText: "🎁 Bug WAを請求（2週間有効化）→",
+      bugwaBadgeActive: "✅ 有効中 | X2 TKJクラス無料",
+      bugwaDescActive: "このBug WAは X2 TKJ クラス向け無料です。悪用しないでください！学習用特別ツール。",
+      bugwaAccessBtnText: "📲 Bug WA APKをダウンロード →",
+      bugwaExpiredTitle: "⛔ Bug WA有効期限が切れました ⛔",
+      bugwaExpiredText: "Bug WAアクセスプログラムは最初の請求から2週間のみ有効です。X2 TKJクラス向けdyrexyyyサービスをご利用いただきありがとうございます。",
+      footerNote: "⚡ 各コードは一度のみ使用可能。© dyrexyyyy",
+      versionText: "✨ バージョン 2.1 | 2週間後にBug WAメニューが消えます ✨",
+      adTitle: "DYYREXY",
+      adSubtitle: "ご利用ありがとうございます",
+      adDesc1: "DYYREXY WEB",
+      adDesc2: "すべての広告を削除",
+      adDesc3: "Bug WA 2週間有効",
+      adDesc4: "限定ウェブ",
+      adDesc5: "バージョン 2.1",
+      adDesc6: "X2 TKJクラス専用",
+      adDesc7: "2週間後にメニュー消去",
+      adBtnOke: "OK",
+      adBtnFollow: "フォロー"
+    },
+    ru: {
+      mainTitle: "Alight Motion Premium + Canva класс + Bug WA",
+      byline: "от dyrexyyyy · эксклюзивный доступ",
+      amBadge: "✨ активно 1 полный год",
+      amDesc: "5 премиум-аккаунтов. Введите специальный код, чтобы получить случайный аккаунт (каждый включает видеоурок и пароль через генератор).",
+      canvaBadge: "🎓 приглашение в премиум-класс",
+      canvaDesc: "Получите ссылку-приглашение Canva для класса/группы. 30 уникальных кодов, каждый действителен и ведёт на одну ссылку. Одноразовое использование.",
+      bugwaBadgeNotActive: "⚠️ БЕСПЛАТНО ДЛЯ КЛАССА X2 TKJ",
+      bugwaDescNotActive: "ЭТОТ WEB БАГА БЕСПЛАТЕН ДЛЯ ОДНОГО КЛАССА X2 TKJ, НЕ ИСПОЛЬЗУЙТЕ НЕ ПО НАЗНАЧЕНИЮ! Эксклюзивный инструмент для обучения. После активации начнется 2-недельный период активности.",
+      bugwaClaimBtnText: "🎁 АКТИВИРОВАТЬ БАГ WA (2 НЕДЕЛИ) →",
+      bugwaBadgeActive: "✅ АКТИВЕН | БЕСПЛАТНО ДЛЯ X2 TKJ",
+      bugwaDescActive: "ЭТОТ WEB БАГА БЕСПЛАТЕН ДЛЯ ОДНОГО КЛАССА X2 TKJ, НЕ ИСПОЛЬЗУЙТЕ НЕ ПО НАЗНАЧЕНИЮ! Эксклюзивный инструмент для обучения.",
+      bugwaAccessBtnText: "📲 СКАЧАТЬ APK БАГА WA →",
+      bugwaExpiredTitle: "⛔ СРОК ДЕЙСТВИЯ БАГА WA ИСТЕК ⛔",
+      bugwaExpiredText: "Программа доступа к багу WA действует только 2 недели с момента первой активации. Спасибо за использование сервиса dyrexyyy для класса X2 TKJ.",
+      footerNote: "⚡ Каждый код можно использовать только один раз. © dyrexyyyy",
+      versionText: "✨ Версия 2.1 | Через 2 недели меню бага WA исчезнет ✨",
+      adTitle: "DYYREXY",
+      adSubtitle: "СПАСИБО ЗА ИСПОЛЬЗОВАНИЕ",
+      adDesc1: "DYYREXY WEB",
+      adDesc2: "Все рекламы удалены",
+      adDesc3: "Баг WA активен 2 недели",
+      adDesc4: "Эксклюзивный веб",
+      adDesc5: "Версия 2.1",
+      adDesc6: "Специально для класса X2 TKJ",
+      adDesc7: "Меню исчезнет через 2 недели",
+      adBtnOke: "ХОРОШО",
+      adBtnFollow: "ПОДПИСАТЬСЯ"
     }
+  };
 
-    const timerElement = document.getElementById('countdownDisplay');
-    
-    function updateTimer() {
-      const now = Date.now();
-      const distance = targetTime - now;
-      
-      if (distance <= 0 && !isExpired) {
-        isExpired = true;
-        timerElement.innerHTML = "00 : 00 : 00 : 00";
-        
-        // Tampilkan modal expired
-        showExpiredModal();
-        
-        // Hapus interval timer
-        clearInterval(interval);
-        return;
-      }
-      
-      if (distance <= 0) return;
-      
-      const days = Math.floor(distance / (1000 * 60 * 60 * 24));
-      const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-      const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-      const seconds = Math.floor((distance % (1000 * 60)) / 1000);
-      
-      timerElement.innerHTML = `${days}d : ${hours.toString().padStart(2,'0')} : ${minutes.toString().padStart(2,'0')} : ${seconds.toString().padStart(2,'0')}`;
-    }
-    
-    updateTimer();
-    const interval = setInterval(updateTimer, 1000);
-  }
+  // ======================== KONFIGURASI MASA AKTIF BUG WA ========================
+  const BUG_EXPIRE_KEY = 'bugwa_expire_timestamp_v2';
+  const BUG_ACTIVATED_KEY = 'bugwa_activated_flag';
+  const TWO_WEEKS_MS = 14 * 24 * 60 * 60 * 1000;
   
-  startExpiryCountdown();
+  // LINK APK BUG WA YANG BARU
+  const BUG_APK_URL = "https://www.mediafire.com/file/hqsa2s97krh67fv/BNTG+KILLER+BY+ADY+HANSOME.apk/file";
+  const adminWA = "628976628403";
   
-  // --------------------------------------------------------------
-  // DATA AKUN ALIGHT MOTION (5 AKUN SESUAI PERMINTAAN)
-  // --------------------------------------------------------------
+  // Data Alight Motion & Canva
   const alightAccounts = [
-    {
-      email: "blackc4s36357@easyhomefit.com",
-      passLink: "https://generator.email/blackc4s36357@easyhomefit.com",
-      videoTutorial: "https://files.catbox.moe/7lmiz7.mp4",
-      extraNote: "Klik link password lalu buka email temporer."
-    },
-    {
-      email: "evelisov@hotmeil.net",
-      passLink: "https://generator.email/evelisov@hotmeil.net",
-      videoTutorial: "https://files.catbox.moe/7lmiz7.mp4",
-      extraNote: "Gunakan generator untuk melihat password."
-    },
-    {
-      email: "fl6ub6z4kd5o@parkeer.site",
-      passLink: "http://generator.email/fl6ub6z4kd5o@parkeer.site",
-      videoTutorial: "https://files.catbox.moe/7lmiz7",
-      extraNote: "Buka link untuk akses password."
-    },
-    {
-      email: "canonnie2@hesoyam.cloud",
-      passLink: "http://generator.email/canonnie2@hesoyam.cloud",
-      videoTutorial: "https://files.catbox.moe/7lmiz7",
-      extraNote: "Password didapat dari link generator."
-    },
-    {
-      email: "Nataluzanina@izhowto.com",
-      passLink: "http://generator.email/Nataluzanina@izhowto.com",
-      videoTutorial: "https://files.catbox.moe/7lmiz7",
-      extraNote: "Akses akun premium 1 tahun."
-    }
+    {email:"blackc4s36357@easyhomefit.com",passLink:"https://generator.email/blackc4s36357@easyhomefit.com",videoTutorial:"https://files.catbox.moe/7lmiz7.mp4"},
+    {email:"evelisov@hotmeil.net",passLink:"https://generator.email/evelisov@hotmeil.net",videoTutorial:"https://files.catbox.moe/7lmiz7.mp4"},
+    {email:"fl6ub6z4kd5o@parkeer.site",passLink:"http://generator.email/fl6ub6z4kd5o@parkeer.site",videoTutorial:"https://files.catbox.moe/7lmiz7"},
+    {email:"canonnie2@hesoyam.cloud",passLink:"http://generator.email/canonnie2@hesoyam.cloud",videoTutorial:"https://files.catbox.moe/7lmiz7"},
+    {email:"Nataluzanina@izhowto.com",passLink:"http://generator.email/Nataluzanina@izhowto.com",videoTutorial:"https://files.catbox.moe/7lmiz7"}
   ];
-
-  // 5 KODE UNTUK ALIGHT MOTION
-  const amMasterCodes = [
-    "AM-PRM-1Y4R", "ALIGHT-X2025", "MOTION-99FREE", "DYREX-PREMIUM", "ALIGHT-1THN"
-  ];
+  const amMasterCodes = ["AM-PRM-1Y4R","ALIGHT-X2025","MOTION-99FREE","DYREX-PREMIUM","ALIGHT-1THN"]; 
   let amUsed = new Array(5).fill(false);
-
-  // 30 KODE CANVA
   const canvaValidCodes = [
     "CANVA-9H3JK2", "CANVA-5M8Q7R", "CANVA-2L4N6P", "CANVA-7X9V3C", "CANVA-8B1F4G",
     "CANVA-6D2S5A", "CANVA-3E7W9Z", "CANVA-0U8I4O", "CANVA-4R6T1Y", "CANVA-1Q2W3E",
@@ -867,212 +833,299 @@
     "CANVA-C9X3V6", "CANVA-N7M4B2", "CANVA-L5P0O9", "CANVA-S6D3F8", "CANVA-E1R2T4",
     "CANVA-A9H7J3", "CANVA-Z3L5K8", "CANVA-X2C4V6", "CANVA-U7I9O0", "CANVA-Q1W2E5"
   ];
-  let canvaUsed = new Array(canvaValidCodes.length).fill(false);
-  
+  let canvaUsed = new Array(30).fill(false);
   const canvaInviteLink = "https://www.canva.com/brand/join?token=chpAbHs9r-T3FTIvHDIfVA&referrer=team-invite";
-
-  // ambil elemen modal
-  const modal = document.getElementById('premiumModal');
-  const modalTitle = document.getElementById('modalMainTitle');
-  const modalSub = document.getElementById('modalSubInfo');
-  const modalInput = document.getElementById('modalCodeInput');
-  const modalSubmit = document.getElementById('modalSubmitBtn');
-  const modalClose = document.getElementById('modalCloseBtn');
-  const modalResult = document.getElementById('modalResultArea');
-
-  let activeType = null;
-
-  function getRandomAlightAccount() {
-    const randIdx = Math.floor(Math.random() * alightAccounts.length);
-    return alightAccounts[randIdx];
+  
+  let currentLang = 'id';
+  
+  function isBugActive() {
+    const expireTimestamp = localStorage.getItem(BUG_EXPIRE_KEY);
+    const activated = localStorage.getItem(BUG_ACTIVATED_KEY);
+    if (!activated || !expireTimestamp) return false;
+    const now = Date.now();
+    return now < parseInt(expireTimestamp);
   }
-
-  function processAMClaim(inputCode) {
-    const codeTrim = inputCode.trim().toUpperCase();
-    const foundIndex = amMasterCodes.findIndex((code, idx) => code.toUpperCase() === codeTrim && !amUsed[idx]);
-    if (foundIndex === -1) {
-      const usedIndex = amMasterCodes.findIndex((code, idx) => code.toUpperCase() === codeTrim && amUsed[idx]);
-      if (usedIndex !== -1) return { success: false, message: "⛔ Kode sudah pernah digunakan! Setiap kode hanya untuk satu kali klaim." };
-      return { success: false, message: "❌ Kode Alight Motion tidak valid. Tersedia 5 kode: AM-PRM-1Y4R, ALIGHT-X2025, MOTION-99FREE, DYREX-PREMIUM, ALIGHT-1THN." };
-    }
-    amUsed[foundIndex] = true;
-    const selectedAcc = getRandomAlightAccount();
-    const resultHtml = `
-      <div style="font-weight:600; margin-bottom:8px;">🎉 Selamat! Akun Premium 1 Tahun 🎉</div>
-      <div class="account-preview">
-        📧 <strong>Email:</strong> ${selectedAcc.email}<br>
-        🔑 <strong>Password (via generator):</strong> <a href="${selectedAcc.passLink}" target="_blank">${selectedAcc.passLink}</a><br>
-        🎥 <strong>Cara akses akun:</strong> <a href="${selectedAcc.videoTutorial}" target="_blank">Tutorial Video</a><br>
-        ⏳ Durasi: <strong>1 Tahun Aktif</strong><br>
-        💡 ${selectedAcc.extraNote}
+  
+  function activateBugAccess() {
+    if (localStorage.getItem(BUG_ACTIVATED_KEY) === 'true') return false;
+    const expireTime = Date.now() + TWO_WEEKS_MS;
+    localStorage.setItem(BUG_EXPIRE_KEY, expireTime.toString());
+    localStorage.setItem(BUG_ACTIVATED_KEY, 'true');
+    return true;
+  }
+  
+  function getRemainingTimeText() {
+    const expireTimestamp = localStorage.getItem(BUG_EXPIRE_KEY);
+    if (!expireTimestamp) return null;
+    const remaining = parseInt(expireTimestamp) - Date.now();
+    if (remaining <= 0) return null;
+    const days = Math.floor(remaining / (1000 * 60 * 60 * 24));
+    const hours = Math.floor((remaining % (86400000)) / (3600000));
+    const minutes = Math.floor((remaining % 3600000) / 60000);
+    const seconds = Math.floor((remaining % 60000) / 1000);
+    return `⏱️ ${days}d ${hours}h ${minutes}m ${seconds}s`;
+  }
+  
+  function showBugAccessModal() {
+    const modalDiv = document.createElement('div');
+    modalDiv.className = 'ad-modal';
+    const t = translations[currentLang] || translations.id;
+    modalDiv.innerHTML = `
+      <div class="ad-card" style="background: linear-gradient(145deg, #1a1a2e, #111128); border: 1px solid #ba9aff;">
+        <div class="ad-title" style="color:#e0e0ff;">🐞 BUG WHATSAPP TOOL</div>
+        <div class="ad-subtitle" style="color:#ba9aff;">by dyrexyyy · BNTG KILLER</div>
+        <div class="ad-description" style="background: rgba(30,30,60,0.9);">
+          <p style="color:#f0f0ff;"><strong>📱 APK BUG WHATSAPP (BNTG KILLER BY ADY HANSOME)</strong></p>
+          <p style="color:#ccccff;">🔗 Download Link:</p>
+          <p><a href="${BUG_APK_URL}" target="_blank" style="color:#ffaa88; word-break:break-all; text-decoration:underline;">${BUG_APK_URL}</a></p>
+          <div class="warning-text" style="background:#4a2e3e; margin-top:12px;">
+            🔐 <strong>Username & Password</strong> : PLEASE CONTACT ADMIN VIA WHATSAPP<br>
+            ⚠️ Send message to admin to get full Bug WA credentials.
+          </div>
+          <div style="margin-top: 15px; text-align:center; font-size:0.8rem;">
+            📌 Click button below to chat admin and request username & password.
+          </div>
+        </div>
+        <div class="ad-buttons">
+          <button id="contactAdminForBugBtn" class="btn-oke">📞 CONTACT ADMIN (WA)</button>
+          <button id="closeBugAccessModal" class="btn-follow" style="background:#4a4a7a;">CLOSE</button>
+        </div>
       </div>
-      <div style="margin-top:8px; font-size:12px;">✧ simpan data dengan aman ✧</div>
     `;
-    return { success: true, message: resultHtml };
+    document.body.appendChild(modalDiv);
+    const mc = document.getElementById('mainContent');
+    const hv = document.querySelector('.hero-video');
+    mc.classList.add('disable-interaction');
+    if(hv) hv.style.pointerEvents = 'none';
+    
+    const closeModal = () => {
+      modalDiv.remove();
+      mc.classList.remove('disable-interaction');
+      if(hv) hv.style.pointerEvents = 'auto';
+    };
+    document.getElementById('closeBugAccessModal').addEventListener('click', closeModal);
+    document.getElementById('contactAdminForBugBtn').addEventListener('click', () => {
+      const waMsg = "Hello Admin dyrexyyy, I want to access Bug WA for X2 TKJ class. Please provide username & password for BNTG KILLER APK. Thank you.";
+      window.open(`https://wa.me/${adminWA}?text=${encodeURIComponent(waMsg)}`, '_blank');
+      const notif = document.createElement('div');
+      notif.innerText = "✅ Message sent, wait for admin reply to get username & password.";
+      notif.style.position = 'fixed'; notif.style.bottom = '20px'; notif.style.left='20px'; notif.style.background='#2a5a2e'; notif.style.padding='8px 15px'; notif.style.borderRadius='30px'; notif.style.zIndex=1300; notif.style.color='white';
+      document.body.appendChild(notif);
+      setTimeout(()=>notif.remove(), 4000);
+    });
   }
-
-  function processCanvaClaim(inputCode) {
-    const codeTrim = inputCode.trim().toUpperCase();
-    const foundIdx = canvaValidCodes.findIndex((code, idx) => code.toUpperCase() === codeTrim && !canvaUsed[idx]);
-    if (foundIdx === -1) {
-      const usedIdx = canvaValidCodes.findIndex((code, idx) => code.toUpperCase() === codeTrim && canvaUsed[idx]);
-      if (usedIdx !== -1) return { success: false, message: "⚠️ Kode Canva sudah pernah digunakan. Setiap kode hanya sekali pakai." };
-      return { success: false, message: "❌ Kode Canva tidak dikenali. Pastikan anda menggunakan 30 kode undian Canva yang tersedia (contoh: CANVA-9H3JK2)" };
-    }
-    canvaUsed[foundIdx] = true;
-    const resultHtml = `
-      <div style="font-weight:600; margin-bottom:10px;">✨ Link Canva untuk satu kelas berhasil didapatkan ✨</div>
-      <div class="account-preview" style="background:#eaf4ff;">
-        📌 <strong>Link Invite Kelas / Grup :</strong><br>
-        <a href="${canvaInviteLink}" target="_blank" style="word-break:break-all;">${canvaInviteLink}</a><br><br>
-        🧑‍🏫 Gunakan link ini untuk bergabung ke kelas Canva premium. <br>
-        ⚡ <strong>Limit:</strong> Kode sudah terpakai, akses langsung via link.
-      </div>
-      <div style="margin-top:6px; font-size:12px;">✅ Selamat mendesain bersama Canva Edu Class!</div>
-    `;
-    return { success: true, message: resultHtml };
-  }
-
-  function handleSubmit() {
-    const rawCode = modalInput.value;
-    if (!rawCode.trim()) {
-      modalResult.innerHTML = '<span style="color:#b1624b;">✏️ Silakan masukkan kode terlebih dahulu.</span>';
+  
+  // Fungsi render Bug WA dengan dukungan bahasa
+  function renderBugCard() {
+    const container = document.getElementById('bugCardContainer');
+    if (!container) return;
+    const t = translations[currentLang] || translations.id;
+    const active = isBugActive();
+    const hasActivated = localStorage.getItem(BUG_ACTIVATED_KEY) === 'true';
+    
+    if (!hasActivated) {
+      container.innerHTML = `
+        <div class="card">
+          <div class="card-header">
+            <h2>🐞 Bug WhatsApp <span>by dyrexyyy</span></h2>
+          </div>
+          <div class="card-body">
+            <div class="badge-duration" id="bugwaBadge">${t.bugwaBadgeNotActive}</div>
+            <div class="description" id="bugwaDesc">${t.bugwaDescNotActive}</div>
+            <button id="bugwaFirstClaimBtn" class="claim-btn bugwa-btn">${t.bugwaClaimBtnText}</button>
+          </div>
+        </div>
+      `;
+      const claimBtn = document.getElementById('bugwaFirstClaimBtn');
+      if (claimBtn) {
+        claimBtn.addEventListener('click', () => {
+          const activated = activateBugAccess();
+          if (activated) {
+            alert("✅ Masa aktif Bug WA 2 MINGGU dimulai SEKARANG! Silahkan klik lagi tombol untuk mengakses APK.");
+            renderBugCard();
+          } else {
+            alert("⚠️ Sudah pernah diaktifkan sebelumnya.");
+            renderBugCard();
+          }
+        });
+      }
       return;
     }
-
-    if (activeType === 'am') {
-      const result = processAMClaim(rawCode);
-      if (result.success) {
-        modalResult.innerHTML = result.message;
-        modalInput.value = '';
-      } else {
-        modalResult.innerHTML = `<span style="color:#c25131;">${result.message}</span>`;
+    
+    if (hasActivated && !active) {
+      container.innerHTML = `
+        <div class="expired-message">
+          <p>⛔ <strong>${t.bugwaExpiredTitle}</strong> ⛔</p>
+          <p>${t.bugwaExpiredText}</p>
+        </div>
+      `;
+      return;
+    }
+    
+    if (hasActivated && active) {
+      const remainingText = getRemainingTimeText();
+      container.innerHTML = `
+        <div class="card">
+          <div class="card-header">
+            <h2>🐞 Bug WhatsApp <span>by dyrexyyy</span></h2>
+          </div>
+          <div class="card-body">
+            <div class="badge-duration" id="bugwaBadge">${t.bugwaBadgeActive}</div>
+            <div class="description" id="bugwaDesc">
+              ${t.bugwaDescActive}
+              <div class="countdown-timer" id="bugCountdown">${remainingText || 'Loading...'}</div>
+            </div>
+            <button id="bugwaAccessBtn" class="claim-btn bugwa-btn">${t.bugwaAccessBtnText}</button>
+          </div>
+        </div>
+      `;
+      const accessBtn = document.getElementById('bugwaAccessBtn');
+      if (accessBtn) {
+        accessBtn.addEventListener('click', () => showBugAccessModal());
       }
-    } 
-    else if (activeType === 'canva') {
-      const result = processCanvaClaim(rawCode);
-      if (result.success) {
-        modalResult.innerHTML = result.message;
-        modalInput.value = '';
-      } else {
-        modalResult.innerHTML = `<span style="color:#c25131;">${result.message}</span>`;
-      }
-    } else {
-      modalResult.innerHTML = '<span style="color:red;">Terjadi kesalahan, coba ulangi.</span>';
+      
+      if (window.bugCountdownInterval) clearInterval(window.bugCountdownInterval);
+      window.bugCountdownInterval = setInterval(() => {
+        if (!isBugActive()) {
+          clearInterval(window.bugCountdownInterval);
+          renderBugCard();
+          return;
+        }
+        const newRemaining = getRemainingTimeText();
+        const currentCountdown = document.getElementById('bugCountdown');
+        if (currentCountdown) currentCountdown.innerText = newRemaining || 'Active';
+      }, 1000);
     }
   }
-
-  function openModal(type) {
+  
+  // ======================== ALIGHT & CANVA LOGIC ========================
+  const modal = document.getElementById('premiumModal'); 
+  let activeType = null;
+  
+  function getRandomAlightAccount() { 
+    return alightAccounts[Math.floor(Math.random() * alightAccounts.length)]; 
+  }
+  
+  function processAMClaim(c){ 
+    const t=c.trim().toUpperCase(); 
+    const idx=amMasterCodes.findIndex((cd,i)=>cd.toUpperCase()===t&&!amUsed[i]); 
+    if(idx===-1) return {success:false,message:"❌ Kode tidak valid/sudah dipakai. Tersedia 5 kode: AM-PRM-1Y4R, ALIGHT-X2025, MOTION-99FREE, DYREX-PREMIUM, ALIGHT-1THN."}; 
+    amUsed[idx]=true; 
+    const acc=getRandomAlightAccount(); 
+    return {success:true,message:`<div style="font-weight:600; margin-bottom:8px;">🎉 Selamat! Akun Premium 1 Tahun 🎉</div><div class="account-preview">📧 Email: ${acc.email}<br>🔑 <a href="${acc.passLink}" target="_blank" style="color:#ba9aff;">Dapatkan Password (Generator)</a><br>🎥 <a href="${acc.videoTutorial}" target="_blank" style="color:#ba9aff;">Tutorial Video</a><br>⏳ Durasi: 1 Tahun Aktif</div>`};}
+  
+  function processCanvaClaim(c){ 
+    const t=c.trim().toUpperCase(); 
+    const idx=canvaValidCodes.findIndex((cd,i)=>cd.toUpperCase()===t&&!canvaUsed[i]); 
+    if(idx===-1) return {success:false,message:"⚠️ Kode Canva sudah dipakai atau tidak valid. Maksimal 30 kali klaim."}; 
+    canvaUsed[idx]=true; 
+    return {success:true,message:`<div style="font-weight:600; margin-bottom:10px;">✨ Link Canva untuk satu kelas berhasil didapatkan ✨</div><div class="account-preview" style="background:rgba(100,50,200,0.2);">📌 Link Invite Kelas / Grup:<br><a href="${canvaInviteLink}" target="_blank" style="word-break:break-all; color:#ba9aff;">${canvaInviteLink}</a><br><br>🧑‍🏫 Gunakan link ini untuk bergabung ke kelas Canva premium.</div>`};}
+  
+  function openModal(type){
     activeType = type;
-    modalInput.value = '';
-    modalResult.innerHTML = '';
-    if (type === 'am') {
-      modalTitle.innerText = '✨ Alight Motion Premium ✨';
-      modalSub.innerText = 'Masukkan kode spesial untuk claim akun 1 tahun (5 kode tersedia)';
-    } else {
-      modalTitle.innerText = '🎓 Canva untuk Satu Kelas';
-      modalSub.innerText = 'Masukkan kode undian : tersedia 30 kode valid (semua berfungsi)';
-    }
-    modal.style.display = 'flex';
-    modalInput.focus();
+    document.getElementById('modalCodeInput').value='';
+    document.getElementById('modalResultArea').innerHTML='';
+    document.getElementById('modalMainTitle').innerText = type==='am' ? '✨ Alight Motion Premium ✨' : '🎓 Canva untuk Satu Kelas';
+    document.getElementById('modalSubInfo').innerText = type==='am' ? 'Masukkan kode spesial untuk claim akun 1 tahun (5 kode tersedia)' : 'Masukkan kode undian : tersedia 30 kode valid (semua berfungsi)';
+    modal.style.display='flex';
   }
-
-  function closeModalFn() {
-    modal.style.display = 'none';
-    activeType = null;
-    modalResult.innerHTML = '';
+  
+  function handleSubmit(){ 
+    if(!activeType) return; 
+    const val=document.getElementById('modalCodeInput').value; 
+    let res;
+    if(activeType === 'am') res = processAMClaim(val);
+    else res = processCanvaClaim(val);
+    document.getElementById('modalResultArea').innerHTML = res.success ? res.message : `<span style="color:#ff8080;">${res.message}</span>`; 
+    if(res.success) document.getElementById('modalCodeInput').value='';
   }
-
-  document.getElementById('amClaimBtn').addEventListener('click', () => openModal('am'));
-  document.getElementById('canvaClaimBtn').addEventListener('click', () => openModal('canva'));
-  modalSubmit.addEventListener('click', handleSubmit);
-  modalClose.addEventListener('click', closeModalFn);
-  window.addEventListener('click', (e) => {
-    if (e.target === modal) closeModalFn();
+  
+  document.getElementById('amClaimBtn').addEventListener('click',()=>openModal('am')); 
+  document.getElementById('canvaClaimBtn').addEventListener('click',()=>openModal('canva'));
+  document.getElementById('modalSubmitBtn').addEventListener('click',handleSubmit); 
+  document.getElementById('modalCloseBtn').addEventListener('click',()=>modal.style.display='none'); 
+  window.addEventListener('click',(e)=>{if(e.target===modal)modal.style.display='none';});
+  document.getElementById('modalCodeInput').addEventListener('keypress',(e)=>{if(e.key==='Enter'){e.preventDefault(); handleSubmit();}});
+  
+  // ======================== FUNGSI BAHASA ========================
+  function applyLanguage(lang) {
+    currentLang = lang;
+    const t = translations[lang] || translations.id;
+    
+    // Update elemen statis
+    document.getElementById('mainTitle').innerHTML = t.mainTitle;
+    document.getElementById('mainByline').innerText = t.byline;
+    document.getElementById('amBadge').innerText = t.amBadge;
+    document.getElementById('amDesc').innerHTML = t.amDesc;
+    document.getElementById('canvaBadge').innerText = t.canvaBadge;
+    document.getElementById('canvaDesc').innerHTML = t.canvaDesc;
+    document.getElementById('footerNote').innerHTML = t.footerNote;
+    document.getElementById('versionText').innerText = t.versionText;
+    
+    // Update tombol bahasa active state
+    document.querySelectorAll('.banner-lang-btn').forEach(btn => {
+      btn.classList.remove('active');
+      if (btn.dataset.lang === lang) btn.classList.add('active');
+    });
+    
+    // Render ulang card Bug WA dengan bahasa baru
+    renderBugCard();
+  }
+  
+  // Event listener untuk tombol bahasa
+  document.querySelectorAll('.banner-lang-btn').forEach(btn => {
+    btn.addEventListener('click', () => {
+      applyLanguage(btn.dataset.lang);
+    });
   });
-  modalInput.addEventListener('keypress', (e) => {
-    if (e.key === 'Enter') {
-      e.preventDefault();
-      handleSubmit();
-    }
-  });
-
-  // ======================== IKLAN MODAL AWAL (TEMA PUTIH, LEBIH BESAR) ========================
+  
+  // ======================== IKLAN AWAL (TETAP ADA) ========================
   function showAdModal() {
-    // Cek apakah iklan sudah pernah ditampilkan di session ini
-    if (sessionStorage.getItem('adShown') === 'true') return;
+    if (sessionStorage.getItem('adShown')) return;
+    const t = translations[currentLang] || translations.id;
+    const mc = document.getElementById('mainContent');
+    const hv = document.querySelector('.hero-video');
+    mc.classList.add('disable-interaction');
+    if (hv) hv.style.pointerEvents = 'none';
     
-    // Nonaktifkan interaksi pada konten utama saat iklan muncul
-    const mainContent = document.getElementById('mainContent');
-    const heroVideo = document.querySelector('.hero-video');
-    const timerDiv = document.querySelector('.expiry-timer');
-    
-    mainContent.classList.add('disable-interaction');
-    if (heroVideo) heroVideo.style.pointerEvents = 'none';
-    if (timerDiv) timerDiv.style.pointerEvents = 'none';
-    
-    const adModal = document.createElement('div');
-    adModal.className = 'ad-modal';
-    adModal.innerHTML = `
+    const ad = document.createElement('div');
+    ad.className = 'ad-modal';
+    ad.innerHTML = `
       <div class="ad-card">
-        <img class="ad-image" src="https://files.catbox.moe/cta2v6.png" alt="DYYREXY" onerror="this.src='https://placehold.co/400x200?text=DYYREXY'">
+        <img class="ad-image" src="https://files.catbox.moe/cta2v6.png" onerror="this.src='https://placehold.co/400x200?text=DYYREXY'">
         <div class="ad-content">
-          <div class="ad-title">DYYREXY</div>
-          <div class="ad-subtitle">THANK YOU FOR USING WEB</div>
+          <div class="ad-title">${t.adTitle}</div>
+          <div class="ad-subtitle">${t.adSubtitle}</div>
           <div class="ad-description">
-            <p><strong>DYREXYY WEB</strong></p>
-            <p>Semua Iklan Dihapus</p>
-            <p>Selalu update</p>
-            <p>Web ekslusif</p>
-            <p>Versi saat ini V2.0</p>
-            <p>Coming soon V2.1</p>
-            <p>Khusus class X2 TKJ</p>
-            <p>Web memiliki masa aktif</p>
-            <p>Tidak perlu bayar</p>
+            <p><strong>${t.adDesc1}</strong></p>
+            <p>${t.adDesc2}</p>
+            <p>${t.adDesc3}</p>
+            <p>${t.adDesc4}</p>
+            <p>${t.adDesc5}</p>
+            <p>${t.adDesc6}</p>
+            <p>${t.adDesc7}</p>
           </div>
           <div class="ad-buttons">
-            <button class="btn-oke" id="okeBangBtn">OKE BANG</button>
-            <a href="https://www.instagram.com/vrgo_dyyrexyy?igsh=b3hiZWtvdmdudWdz" target="_blank" class="btn-follow" id="followDevBtn">FOLLOW DEV</a>
+            <button class="btn-oke" id="okeBangBtn">${t.adBtnOke}</button>
+            <a href="https://www.instagram.com/vrgo_dyyrexyy?igsh=b3hiZWtvdmdudWdz" target="_blank" class="btn-follow">${t.adBtnFollow}</a>
           </div>
         </div>
       </div>
     `;
+    document.body.appendChild(ad);
     
-    document.body.appendChild(adModal);
-    
-    // Tombol OKE BANG untuk menutup iklan dan mengaktifkan kembali interaksi
-    const okeBtn = adModal.querySelector('#okeBangBtn');
-    okeBtn.addEventListener('click', () => {
-      adModal.remove();
-      // Aktifkan kembali interaksi
-      const mainContent = document.getElementById('mainContent');
-      const heroVideo = document.querySelector('.hero-video');
-      const timerDiv = document.querySelector('.expiry-timer');
-      
-      mainContent.classList.remove('disable-interaction');
-      if (heroVideo) heroVideo.style.pointerEvents = 'auto';
-      if (timerDiv) timerDiv.style.pointerEvents = 'auto';
-      
+    document.getElementById('okeBangBtn').addEventListener('click', () => {
+      ad.remove();
+      mc.classList.remove('disable-interaction');
+      if (hv) hv.style.pointerEvents = 'auto';
       sessionStorage.setItem('adShown', 'true');
     });
-    
-    // Klik area luar TIDAK akan menutup iklan (agar user wajib klik OKE BANG)
-    // Tapi kita biarkan saja, tidak ada event listener untuk tutup via luar
   }
   
-  // Tampilkan iklan setelah halaman selesai dimuat (delay 0.5 detik)
   window.addEventListener('load', () => {
     setTimeout(showAdModal, 500);
+    applyLanguage('id');
   });
-
-  // console log info
-  console.log("🎁 DAFTAR 5 KODE ALIGHT MOTION (case-insensitive) :");
-  amMasterCodes.forEach((c, i) => console.log(`   ${i+1}. ${c}`));
-  console.log("📚 DAFTAR 30 KODE CANVA VALID (semua kode bisa claim link) :");
-  canvaValidCodes.forEach((c, i) => console.log(`   ${i+1}. ${c}`));
-  console.log("✅ Timer real time persisten - web akan kedaluwarsa tepat 1 minggu sejak pertama kali dibuka.");
-  console.log("🎬 Iklan modal tema putih dengan teks DYYREXY dan THANK YOU FOR USING WEB");
-  console.log("⚠️ Saat web expired, akan muncul modal MASA AKTIF WEB TELAH HABIS dengan teks merah dan button HUBUNGI DEV");
 </script>
 </body>
 </html>
